@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ImpactUs — Turn Your CV Into a Website & Land Your First Interview</title>
+  <meta name="description" content="ImpactUs turns your CV into a discoverable personal website, ranks it on Google with SEO and digital marketing, and gives you expert guidance until you land your first interview. Guaranteed." />
+  <meta property="og:title" content="ImpactUs — Get discovered. Get chosen." />
+  <meta property="og:description" content="Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. Guaranteed." />
+  <meta property="og:image" content="assets/img/logo.png" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Apply saved theme before paint (avoids a flash of the wrong colours)
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search).get('theme');
+        var t = p || localStorage.getItem('impactus-theme');
+        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#home" class="brand" aria-label="ImpactUs home">
+      <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+      <span class="brand__word">Impact<span>Us</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#home" data-spy="home">Home</a>
+      <a href="#program" data-spy="program">Program</a>
+      <a href="#stories" data-spy="stories">Success Stories</a>
+      <a href="#how" data-spy="how">How It Works</a>
+      <a href="#about" data-spy="about">About</a>
+      <a href="#faq" data-spy="faq">FAQ</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
+        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
+        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
+        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
+      </div>
+      <a href="#apply" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 1. HOME / HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="eyebrow reveal">CV → Website → Google → Interview</span>
+      <h1 class="hero__title reveal">
+        You have the skills.<br />
+        But can the <span class="hl">world notice&nbsp;it</span>?
+      </h1>
+      <p class="hero__sub reveal">Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. <strong>Guaranteed.</strong></p>
+      <div class="hero__cta reveal">
+        <a href="#apply" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
+        <button class="btn btn--ghost" data-open-video>
+          <span class="play-dot" aria-hidden="true">▶</span> Watch 2-Min Overview
+        </button>
+      </div>
+      <ul class="ticks reveal">
+        <li>CV → Personal Website</li>
+        <li>Expert Guidance</li>
+        <li>Rank on Google</li>
+        <li>First Interview Guaranteed</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual reveal">
+      <div class="hero__photo">
+        <img src="assets/img/hero-crowd.jpg" alt="A crowd of students, two of them glowing and standing out" />
+      </div>
+      <!-- floating CV website card -->
+      <div class="float-card float-card--site">
+        <div class="browser-dots"><i></i><i></i><i></i><span>kabirahmed.com</span></div>
+        <div class="float-card__body">
+          <img src="assets/img/kabir.jpg" alt="" />
+          <div>
+            <b>Kabir Ahmed</b>
+            <small>Digital Marketer</small>
+            <div class="skel"><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="float-card float-card--rank">
+        <span class="rank-badge">#1</span>
+        <div><b>on Google</b><small>“kabir digital marketer”</small></div>
+      </div>
+      <div class="float-card float-card--invite">
+        <span class="check">✓</span>
+        <div><b>Interview invite</b><small>Thu · 11:00 AM</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM (from deck slides 2–4) ============ -->
+<section class="problem section--alt">
+  <div class="container problem__grid">
+    <div class="problem__stat reveal">
+      <p class="problem__lead">The right opportunity might <span class="neg">never find you.</span></p>
+      <div class="big-number"><span data-count="264">0</span> million</div>
+      <p class="muted">Students enrolled in higher education worldwide in 2025 <strong>as per UNESCO</strong></p>
+    </div>
+    <div class="problem__cards">
+      <div class="pcard reveal">
+        <p>Your degree makes you eligible.</p>
+        <p class="pcard__strong">But it doesn’t <span class="hl">guarantee the spot.</span></p>
+      </div>
+      <div class="pcard reveal">
+        <p>So how can you get</p>
+        <p class="pcard__strong"><span class="hl">seen</span>, <span class="hl">valued</span> &amp; <span class="hl">chosen</span>?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. PROGRAM ============ -->
+<section class="section" id="program">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">Your transformation</span>
+      <h2 class="reveal">The transformative program to<br />get you <span class="hl">discovered</span> <span class="hl2">and hired.</span></h2>
+      <p class="section__sub reveal">One path. All 3 advantages unlocked.</p>
+    </div>
+
+    <div class="path">
+      <article class="path__card reveal">
+        <div class="icon-box" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="9" width="38" height="30" rx="4"/><circle cx="16" cy="21" r="4"/><path d="M10 32c1.5-4 10.5-4 12 0M27 19h10M27 25h10M27 31h6"/></svg>
+        </div>
+        <h3><span class="num num--a">01</span> Build Your Profile</h3>
+        <p>Turn your CV into a powerful, professional website. Make your work impossible to overlook.</p>
+      </article>
+      <div class="path__arrow" aria-hidden="true">→</div>
+      <article class="path__card reveal">
+        <div class="icon-box icon-box--b" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="15" r="6"/><circle cx="11" cy="19" r="4.5"/><circle cx="37" cy="19" r="4.5"/><path d="M13 39c0-6 5-10 11-10s11 4 11 10M3 36c0-4 3-7 8-7M45 36c0-4-3-7-8-7"/></svg>
+        </div>
+        <h3><span class="num num--b">02</span> Grow Your Network</h3>
+        <p>Get visibility, build credibility, and attract the right opportunities. Get discovered and trusted for your skills.</p>
+      </article>
+      <div class="path__arrow" aria-hidden="true">→</div>
+      <article class="path__card reveal">
+        <div class="icon-box" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="36" height="32" rx="4"/><path d="M6 18h36M15 5v8M33 5v8"/><rect x="16" y="24" width="16" height="11" rx="2"/><path d="M20 24v-2h8v2"/></svg>
+        </div>
+        <h3><span class="num num--a">03</span> Land Your First Interview</h3>
+        <p>With expert guidance and proven outreach, get your first job interview or client conversation. <strong>Guaranteed.</strong></p>
+      </article>
+    </div>
+
+    <!-- Deep dive: 01 Build your profile -->
+    <div class="feature">
+      <div class="feature__copy reveal">
+        <span class="eyebrow">01 · Build your profile</span>
+        <h3 class="feature__title">Don’t just speak about your skills. <strong>Show the proof.</strong></h3>
+        <ul class="checks">
+          <li>Personal portfolio website</li>
+          <li>Personal brand coaching</li>
+          <li>Digital growth resources</li>
+        </ul>
+        <span class="pill pill--a">Identity that people can search and discover</span>
+      </div>
+      <div class="feature__media reveal">
+        <div class="shot"><img src="assets/img/proof-google.jpg" alt="Google search results showing a candidate's portfolio website, LinkedIn, GitHub and Medium on the first page" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <!-- 02 Grow your network -->
+    <div class="feature feature--flip">
+      <div class="feature__copy reveal">
+        <span class="eyebrow">02 · Grow your network</span>
+        <h3 class="feature__title">The right opportunity comes when you are <strong>visible.</strong></h3>
+        <ul class="checks">
+          <li>Gain experience in digital growth</li>
+          <li>Personal brand group coaching</li>
+          <li>Self-paced LinkedIn growth modules</li>
+        </ul>
+        <span class="pill pill--b">Professional network that unlocks career opportunities</span>
+      </div>
+      <div class="feature__media reveal">
+        <div class="shot shot--tall"><img src="assets/img/network-linkedin.jpg" alt="An optimised LinkedIn profile with featured projects, skills and activity" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <!-- 03 Land your first opportunity -->
+    <div class="feature">
+      <div class="feature__copy reveal">
+        <span class="eyebrow">03 · Land your first opportunity</span>
+        <h3 class="feature__title">Your first job interview or client conversation. <strong>Guaranteed.</strong></h3>
+        <ul class="checks">
+          <li>Dedicated outreach CRM</li>
+          <li>Outreach and application coaching</li>
+          <li>Access to company and client networks</li>
+        </ul>
+        <span class="pill pill--a">System that gets you chosen for your first real opportunity</span>
+      </div>
+      <div class="feature__media reveal">
+        <div class="shot"><img src="assets/img/outreach-crm.jpg" alt="Outreach CRM dashboard tracking emails sent, responses and clients" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <!-- Plans -->
+    <div class="plans">
+      <div class="plan reveal">
+        <span class="plan__tag">Starter</span>
+        <h4>CV → Website</h4>
+        <p class="muted">Your CV rebuilt as a clean, professional personal website.</p>
+        <ul class="checks checks--sm">
+          <li>Personal portfolio website</li>
+          <li>Digital growth resources</li>
+          <li>Self-paced LinkedIn growth modules</li>
+        </ul>
+        <a href="#apply" class="btn btn--ghost btn--block" data-plan="Starter">Choose Starter</a>
+      </div>
+      <div class="plan plan--premium reveal">
+        <span class="plan__tag plan__tag--hot">Premium · Most chosen</span>
+        <h4>Get discovered &amp; hired</h4>
+        <p class="muted">Everything in Starter, plus a dedicated expert who pushes your website up on Google.</p>
+        <ul class="checks checks--sm">
+          <li>1:1 expert guidance</li>
+          <li>SEO &amp; digital marketing for your website</li>
+          <li>Google ranking for your name &amp; role</li>
+          <li>Outreach CRM + application coaching</li>
+          <li><strong>First interview guaranteed</strong></li>
+        </ul>
+        <a href="#apply" class="btn btn--primary btn--block" data-plan="Premium">Go Premium <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. SUCCESS STORIES ============ -->
+<section class="section section--alt" id="stories">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">Success stories</span>
+      <h2 class="reveal">Same skills. Different journeys.<br /><span class="hl">Real outcomes.</span></h2>
+      <p class="section__sub reveal">Same degree. Same ambition. Tap a story to see how it played out.</p>
+    </div>
+
+    <div class="stories">
+      <button class="story reveal" data-story="smith">
+        <img src="assets/img/smith.jpg" alt="Smith" loading="lazy" />
+        <div class="story__shade"></div>
+        <div class="story__text">
+          <h3>Smith</h3>
+          <p>Applied to 1,000+ jobs. Didn’t get a single response.</p>
+        </div>
+        <span class="story__go" aria-hidden="true">›</span>
+      </button>
+      <button class="story reveal" data-story="sandra">
+        <img src="assets/img/sandra.jpg" alt="Sandra" loading="lazy" />
+        <div class="story__shade"></div>
+        <div class="story__text">
+          <h3>Sandra</h3>
+          <p>Did more. Sent personal follow-ups with clients. Yet silence stayed.</p>
+        </div>
+        <span class="story__go" aria-hidden="true">›</span>
+      </button>
+      <button class="story story--win reveal" data-story="kabir">
+        <img src="assets/img/kabir.jpg" alt="Kabir" loading="lazy" />
+        <div class="story__shade"></div>
+        <div class="story__text">
+          <h3>Kabir</h3>
+          <p>Flipped the script. He stopped searching &amp; started getting discovered.</p>
+        </div>
+        <span class="story__go" aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <!-- Similar skills. Different outcomes. -->
+    <div class="equation">
+      <p class="equation__lead reveal">Similar skills. <span class="hl">Different outcomes.</span></p>
+      <div class="equation__row">
+        <span class="eq reveal">Proof</span><span class="eq__op reveal">+</span>
+        <span class="eq reveal">Visibility</span><span class="eq__op reveal">+</span>
+        <span class="eq reveal">Network</span>
+      </div>
+      <p class="scrub" data-scrub>Your degree alone gives none. How do you activate all 3?</p>
+      <a href="#how" class="btn btn--primary reveal">See how it works <span class="arrow">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">How it works</span>
+      <h2 class="reveal">See How It <span class="hl2">Actually Works.</span></h2>
+      <p class="section__sub reveal">A short walkthrough of how we turn your CV into a high-visibility personal website and get it discovered on Google.</p>
+    </div>
+
+    <div class="how">
+      <div class="player reveal" id="player">
+        <div class="screen" id="screen">
+          <!-- Scene 1: CV → Website -->
+          <div class="scene" data-scene="0">
+            <div class="cv">
+              <div class="cv__head"><span class="cv__ph"></span><div><b>CURRICULUM VITAE</b><i></i></div></div>
+              <i></i><i></i><i class="s"></i><i></i><i class="s"></i><i></i>
+            </div>
+            <div class="morph-arrow">➜</div>
+            <div class="site">
+              <div class="browser-dots"><i></i><i></i><i></i><span>kabirahmed.com</span></div>
+              <div class="site__body">
+                <div class="site__nav"><i></i><i></i><i></i><i></i></div>
+                <div class="site__hero">
+                  <div><small>Hi, I’m Kabir</small><b>Digital Marketer</b><span class="site__btn">View my work</span></div>
+                  <img src="assets/img/kabir.jpg" alt="" />
+                </div>
+                <div class="site__cards"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- Scene 2: SEO -->
+          <div class="scene" data-scene="1">
+            <div class="seo">
+              <div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="ring__bg"/><circle cx="60" cy="60" r="50" class="ring__fg"/></svg><div class="ring__val"><b data-ring>0</b><small>SEO score</small></div></div>
+              <div class="chips">
+                <span>Meta titles</span><span>Keywords</span><span>Schema</span><span>Backlinks</span><span>Page speed 98</span><span>LinkedIn sync</span><span>Content plan</span><span>Mobile-ready</span>
+              </div>
+            </div>
+          </div>
+          <!-- Scene 3: Google -->
+          <div class="scene" data-scene="2">
+            <div class="serp">
+              <div class="serp__logo"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></div>
+              <div class="serp__box"><span data-type="kabir digital marketer portfolio"></span><i class="caret"></i></div>
+              <div class="serp__res">
+                <span class="serp__one">#1</span>
+                <small>kabirahmed.com</small>
+                <b>Kabir – Digital Marketer | Portfolio</b>
+                <p>Digital marketer with expertise in SEO, content and growth marketing.</p>
+              </div>
+              <div class="serp__res serp__res--dim"><i></i><i></i></div>
+            </div>
+          </div>
+          <!-- Scene 4: Traffic -->
+          <div class="scene" data-scene="3">
+            <div class="traffic">
+              <div class="traffic__stats">
+                <div><b data-num="1240">0</b><small>Profile views</small></div>
+                <div><b data-num="86">0</b><small>Recruiter visits</small></div>
+                <div><b data-num="14">0</b><small>Client enquiries</small></div>
+              </div>
+              <svg class="traffic__chart" viewBox="0 0 400 140" preserveAspectRatio="none">
+                <path class="area" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12 L400 140 L0 140Z"/>
+                <path class="line" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12"/>
+              </svg>
+              <div class="visitors"><span>🏢 Employer</span><span>💼 Client</span><span>🧑‍💼 Recruiter</span></div>
+            </div>
+          </div>
+          <!-- Scene 5: Interview -->
+          <div class="scene" data-scene="4">
+            <div class="invite">
+              <div class="invite__card">
+                <div class="invite__top"><span class="check">✓</span><div><b>Interview invitation</b><small>From: Hiring Team</small></div></div>
+                <p>Hi Kabir, we came across your portfolio on Google and would love to talk about the Digital Marketing role.</p>
+                <div class="invite__when">📅 Thursday · 11:00 AM</div>
+              </div>
+              <div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <div class="caption" id="caption">We build your personal website</div>
+          <button class="big-play" id="bigPlay" aria-label="Play walkthrough">▶</button>
+        </div>
+        <div class="controls">
+          <button class="ctrl" id="playBtn" aria-label="Play">▶</button>
+          <div class="bar" id="bar"><div class="bar__fill" id="barFill"></div><div class="bar__marks"><i></i><i></i><i></i><i></i></div></div>
+          <span class="time" id="time">0:00 / 0:25</span>
+        </div>
+      </div>
+
+      <ol class="steps" id="steps">
+        <li data-step="0"><span>1</span><div><b>We build your personal website</b><small>Your CV becomes a professional portfolio site.</small></div></li>
+        <li data-step="1"><span>2</span><div><b>Optimize it with SEO &amp; digital marketing</b><small>Your expert tunes keywords, content and links.</small></div></li>
+        <li data-step="2"><span>3</span><div><b>Get it ranked on Google</b><small>Search your name + role — you show up first.</small></div></li>
+        <li data-step="3"><span>4</span><div><b>Drive the right traffic</b><small>Employers &amp; clients find and visit you.</small></div></li>
+        <li data-step="4"><span>5</span><div><b>Land your first interview. Guaranteed.</b><small>Outreach + coaching until the call is booked.</small></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. ABOUT ============ -->
+<section class="section section--alt" id="about">
+  <div class="container about">
+    <div class="about__media reveal">
+      <img src="assets/img/kabir-pointing.png" alt="Kabir pointing towards the ImpactUs mission" loading="lazy" />
+      <div class="about__halo" aria-hidden="true"></div>
+    </div>
+    <div class="about__copy">
+      <span class="eyebrow reveal">About ImpactUs</span>
+      <h2 class="reveal">Our <span class="hl">Mission</span></h2>
+      <p class="about__lead reveal">To help talented students and professionals get discovered, build credibility, and land their first real opportunity through a powerful online presence and expert guidance.</p>
+      <p class="muted reveal">The transformative path to become <strong class="hl2">globally discovered and trusted.</strong></p>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M28 8c7 0 12 5 12 12L26 34l-12-12L28 8Z"/><circle cx="29" cy="19" r="3.5"/><path d="M14 22l-6 2 4 6M26 34l-2 6-6-4M12 36c-3 3-4 6-4 6s3-1 6-4"/></svg>
+          <b>Discover<br />Your Potential</b>
+        </div>
+        <div class="pillar reveal">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40h32M12 40V28h6v12M21 40V20h6v20M30 40V12h6v28"/><path d="M10 20l10-9 6 5 12-10"/></svg>
+          <b>Build<br />Your Visibility</b>
+        </div>
+        <div class="pillar reveal">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="3"/><path d="M24 24l14-14M33 9h5v5"/></svg>
+          <b>Get<br />Hired</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container container--narrow">
+    <div class="section__head">
+      <span class="eyebrow reveal">FAQ</span>
+      <h2 class="reveal">Frequently Asked <span class="hl2">Questions</span></h2>
+    </div>
+    <div class="faq" id="faqList">
+      <details class="faq__item reveal" open>
+        <summary>Do you really guarantee a first interview?</summary>
+        <div class="faq__a">Yes. With our Premium program, we guarantee you’ll get at least one real job interview or client conversation within the program duration.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>How is my CV turned into a website?</summary>
+        <div class="faq__a">You share your CV, projects and goals. Our team builds a clean, professional personal website that presents your experience, skills and proof of work — with your own name in the web address — so anyone can find and trust you.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>How do you rank my website on Google?</summary>
+        <div class="faq__a">Your Premium expert applies SEO and digital marketing to your website: the right keywords for your name and role, optimised titles and descriptions, structured content, fast mobile pages, and links from your LinkedIn, GitHub and other profiles. This pushes your site up when employers and clients search for you.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>What kind of expert guidance will I get?</summary>
+        <div class="faq__a">1:1 guidance from an expert who helps with your personal brand, LinkedIn growth, outreach and applications. You also get access to group coaching, a dedicated outreach CRM, and our company and client networks.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>Who is this program for?</summary>
+        <div class="faq__a">Students, fresh graduates and early-career professionals — and freelancers looking for their first clients — who have the skills but aren’t getting noticed, shortlisted or called back.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>How long does the program take?</summary>
+        <div class="faq__a">The program runs as a structured cohort. Your website is built first, then optimised and promoted, and outreach continues until you land your first interview or client conversation. Exact cohort dates are shared when you apply.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. APPLY ============ -->
+<section class="section section--alt apply" id="apply">
+  <div class="container apply__grid">
+    <div class="apply__copy">
+      <span class="eyebrow reveal">Next cohort</span>
+      <h2 class="reveal">Ready to Get Discovered and <span class="hl">Land Your First Interview?</span></h2>
+      <p class="reveal">Join the next ImpactUs cohort and turn your CV into a high-visibility career website, with expert guidance and a guaranteed first interview.</p>
+      <ul class="iconlist reveal">
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span> CV → Personal Website</li>
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span> Google Visibility (SEO + Digital Marketing)</li>
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.8 6 5"/></svg></span> 1:1 Expert Guidance</li>
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg></span> First Interview Guaranteed</li>
+      </ul>
+      <div class="kabir-cta reveal">
+        <img src="assets/img/qr.jpg" alt="QR code to apply for the ImpactUs cohort" class="qr" />
+        <p>Don’t let your skills stay hidden.<br /><strong class="hl">Get discovered and chosen like Kabir.</strong></p>
+      </div>
+    </div>
+
+    <form class="form reveal" id="applyForm" novalidate>
+      <h3>Apply for the Next Cohort</h3>
+      <label><span>Full Name</span><input name="name" type="text" autocomplete="name" placeholder="Full Name" required /></label>
+      <label><span>Email Address</span><input name="email" type="email" autocomplete="email" placeholder="Email Address" required /></label>
+      <label><span>Phone Number</span><input name="phone" type="tel" autocomplete="tel" placeholder="Phone Number" required /></label>
+      <label><span>Your Current Status</span>
+        <select name="status" required>
+          <option value="" disabled selected>Your Current Status</option>
+          <option>Student</option>
+          <option>Fresh graduate</option>
+          <option>Working professional</option>
+          <option>Freelancer</option>
+          <option>Career switcher</option>
+        </select>
+      </label>
+      <label><span>Plan</span>
+        <select name="plan" id="planSelect">
+          <option>Premium</option>
+          <option>Starter</option>
+        </select>
+      </label>
+      <button class="btn btn--primary btn--block" type="submit">Apply Now <span class="arrow">↗</span></button>
+      <p class="form__note"><span class="dot-pulse"></span> Only <strong>30 spots</strong> left for our upcoming cohort</p>
+      <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="#home" class="brand brand--light">
+        <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+        <span class="brand__word">Impact<span>Us</span></span>
+      </a>
+      <p class="footer__tag">Get discovered. Get chosen.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="#program">Program</a><a href="#stories">Success Stories</a><a href="#how">How It Works</a>
+    </div>
+    <div>
+      <h5>More</h5>
+      <a href="#about">About</a><a href="#faq">FAQ</a><a href="#apply">Apply</a>
+    </div>
+  </div>
+  <div class="container footer__base">© <span id="year">2026</span> ImpactUs. All rights reserved.</div>
+</footer>
+
+<!-- Story modal -->
+<div class="modal" id="storyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="storyTitle">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__box">
+    <button class="modal__x" data-close aria-label="Close">×</button>
+    <div class="modal__media"><img id="storyImg" src="" alt="" /></div>
+    <div class="modal__body">
+      <span class="eyebrow" id="storyTag"></span>
+      <h3 id="storyTitle"></h3>
+      <p id="storyText"></p>
+      <ul class="checks checks--sm" id="storyPoints"></ul>
+      <a href="#apply" class="btn btn--primary" data-close>Start my journey <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
