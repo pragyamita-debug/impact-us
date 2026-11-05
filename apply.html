@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply for the Next Cohort — ImpactUs</title>
+  <meta name="description" content="Apply for the next ImpactUs cohort. Only 30 spots left." />
+  <meta property="og:title" content="ImpactUs — Get discovered. Get chosen." />
+  <meta property="og:description" content="Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. Guaranteed." />
+  <meta property="og:image" content="assets/img/logo.png" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Apply saved theme before paint (avoids a flash of the wrong colours)
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search).get('theme');
+        var t = p || localStorage.getItem('impactus-theme');
+        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="brand" aria-label="ImpactUs home">
+      <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+      <span class="brand__word">Impact<span>Us</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="program.html">Program</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
+        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
+        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
+        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
+      </div>
+      <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<main class="page page--apply">
+
+<!-- ============ 7. APPLY ============ -->
+<section class="section section--alt apply" id="apply">
+  <div class="container apply__grid">
+    <div class="apply__copy">
+      <span class="eyebrow reveal">Next cohort</span>
+      <h2 class="reveal">Ready to Get Discovered and <span class="hl">Land Your First Interview?</span></h2>
+      <p class="reveal">Join the next ImpactUs cohort and turn your CV into a high-visibility career website, with expert guidance and a guaranteed first interview.</p>
+      <ul class="iconlist reveal">
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span> CV → Personal Website</li>
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span> Google Visibility (SEO + Digital Marketing)</li>
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.8 6 5"/></svg></span> 1:1 Expert Guidance</li>
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg></span> First Interview Guaranteed</li>
+      </ul>
+      <div class="kabir-cta reveal">
+        <img src="assets/img/qr.jpg" alt="QR code to apply for the ImpactUs cohort" class="qr" />
+        <p>Don’t let your skills stay hidden.<br /><strong class="hl">Get discovered and chosen like Kabir.</strong></p>
+      </div>
+    </div>
+
+    <form class="form reveal" id="applyForm" novalidate>
+      <h3>Apply for the Next Cohort</h3>
+      <label><span>Full Name</span><input name="name" type="text" autocomplete="name" placeholder="Full Name" required /></label>
+      <label><span>Email Address</span><input name="email" type="email" autocomplete="email" placeholder="Email Address" required /></label>
+      <label><span>Phone Number</span><input name="phone" type="tel" autocomplete="tel" placeholder="Phone Number" required /></label>
+      <label><span>Your Current Status</span>
+        <select name="status" required>
+          <option value="" disabled selected>Your Current Status</option>
+          <option>Student</option>
+          <option>Fresh graduate</option>
+          <option>Working professional</option>
+          <option>Freelancer</option>
+          <option>Career switcher</option>
+        </select>
+      </label>
+      <label><span>Plan</span>
+        <select name="plan" id="planSelect">
+          <option>Premium</option>
+          <option>Starter</option>
+        </select>
+      </label>
+      <button class="btn btn--primary btn--block" type="submit">Apply Now <span class="arrow">↗</span></button>
+      <p class="form__note"><span class="dot-pulse"></span> Only <strong>30 spots</strong> left for our upcoming cohort</p>
+      <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="index.html" class="brand brand--light">
+        <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+        <span class="brand__word">Impact<span>Us</span></span>
+      </a>
+      <p class="footer__tag">Get discovered. Get chosen.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="program.html">Program</a><a href="success-stories.html">Success Stories</a><a href="how-it-works.html">How It Works</a>
+    </div>
+    <div>
+      <h5>More</h5>
+      <a href="about.html">About</a><a href="faq.html">FAQ</a><a href="apply.html">Apply</a>
+    </div>
+  </div>
+  <div class="container footer__base">© <span id="year">2026</span> ImpactUs. All rights reserved.</div>
+</footer>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

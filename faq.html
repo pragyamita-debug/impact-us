@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — ImpactUs</title>
+  <meta name="description" content="Frequently asked questions about the ImpactUs program and interview guarantee." />
+  <meta property="og:title" content="ImpactUs — Get discovered. Get chosen." />
+  <meta property="og:description" content="Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. Guaranteed." />
+  <meta property="og:image" content="assets/img/logo.png" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Apply saved theme before paint (avoids a flash of the wrong colours)
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search).get('theme');
+        var t = p || localStorage.getItem('impactus-theme');
+        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="brand" aria-label="ImpactUs home">
+      <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+      <span class="brand__word">Impact<span>Us</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="program.html">Program</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About</a>
+      <a href="faq.html" class="is-active" aria-current="page">FAQ</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
+        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
+        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
+        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
+      </div>
+      <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<main class="page page--faq">
+
+<!-- ============ 6. FAQ ============ -->
+<section class="section section--page" id="faq">
+  <div class="container container--narrow">
+    <div class="section__head">
+      <span class="eyebrow reveal">FAQ</span>
+      <h2 class="reveal">Frequently Asked <span class="hl2">Questions</span></h2>
+    </div>
+    <div class="faq" id="faqList">
+      <details class="faq__item reveal" open>
+        <summary>Do you really guarantee a first interview?</summary>
+        <div class="faq__a">Yes. With our Premium program, we guarantee you’ll get at least one real job interview or client conversation within the program duration.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>How is my CV turned into a website?</summary>
+        <div class="faq__a">You share your CV, projects and goals. Our team builds a clean, professional personal website that presents your experience, skills and proof of work — with your own name in the web address — so anyone can find and trust you.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>How do you rank my website on Google?</summary>
+        <div class="faq__a">Your Premium expert applies SEO and digital marketing to your website: the right keywords for your name and role, optimised titles and descriptions, structured content, fast mobile pages, and links from your LinkedIn, GitHub and other profiles. This pushes your site up when employers and clients search for you.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>What kind of expert guidance will I get?</summary>
+        <div class="faq__a">1:1 guidance from an expert who helps with your personal brand, LinkedIn growth, outreach and applications. You also get access to group coaching, a dedicated outreach CRM, and our company and client networks.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>Who is this program for?</summary>
+        <div class="faq__a">Students, fresh graduates and early-career professionals — and freelancers looking for their first clients — who have the skills but aren’t getting noticed, shortlisted or called back.</div>
+      </details>
+      <details class="faq__item reveal">
+        <summary>How long does the program take?</summary>
+        <div class="faq__a">The program runs as a structured cohort. Your website is built first, then optimised and promoted, and outreach continues until you land your first interview or client conversation. Exact cohort dates are shared when you apply.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="container cta-band__inner reveal">
+    <div>
+      <h2>Ready to get <span class="hl">discovered</span>?</h2>
+      <p class="muted">Turn your CV into a website, rank on Google and land your first interview. Only 30 spots left for the upcoming cohort.</p>
+    </div>
+    <div class="cta-band__btns">
+      <a href="apply.html" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
+      <a href="apply.html" class="btn btn--ghost">Go to Application <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="index.html" class="brand brand--light">
+        <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+        <span class="brand__word">Impact<span>Us</span></span>
+      </a>
+      <p class="footer__tag">Get discovered. Get chosen.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="program.html">Program</a><a href="success-stories.html">Success Stories</a><a href="how-it-works.html">How It Works</a>
+    </div>
+    <div>
+      <h5>More</h5>
+      <a href="about.html">About</a><a href="faq.html">FAQ</a><a href="apply.html">Apply</a>
+    </div>
+  </div>
+  <div class="container footer__base">© <span id="year">2026</span> ImpactUs. All rights reserved.</div>
+</footer>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

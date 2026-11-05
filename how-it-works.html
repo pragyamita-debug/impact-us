@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How It Works — ImpactUs</title>
+  <meta name="description" content="See how ImpactUs turns your CV into a website and gets it ranked on Google." />
+  <meta property="og:title" content="ImpactUs — Get discovered. Get chosen." />
+  <meta property="og:description" content="Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. Guaranteed." />
+  <meta property="og:image" content="assets/img/logo.png" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Apply saved theme before paint (avoids a flash of the wrong colours)
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search).get('theme');
+        var t = p || localStorage.getItem('impactus-theme');
+        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="brand" aria-label="ImpactUs home">
+      <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+      <span class="brand__word">Impact<span>Us</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="program.html">Program</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="how-it-works.html" class="is-active" aria-current="page">How It Works</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
+        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
+        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
+        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
+      </div>
+      <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<main class="page page--how">
+
+<!-- ============ 4. HOW IT WORKS ============ -->
+<section class="section section--page" id="how">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">How it works</span>
+      <h2 class="reveal">See How It <span class="hl2">Actually Works.</span></h2>
+      <p class="section__sub reveal">A short walkthrough of how we turn your CV into a high-visibility personal website and get it discovered on Google.</p>
+    </div>
+
+    <div class="how">
+      <div class="player reveal" id="player">
+        <div class="screen" id="screen">
+          <!-- Scene 1: CV → Website -->
+          <div class="scene" data-scene="0">
+            <div class="cv">
+              <div class="cv__head"><span class="cv__ph"></span><div><b>CURRICULUM VITAE</b><i></i></div></div>
+              <i></i><i></i><i class="s"></i><i></i><i class="s"></i><i></i>
+            </div>
+            <div class="morph-arrow">➜</div>
+            <div class="site">
+              <div class="browser-dots"><i></i><i></i><i></i><span>kabirahmed.com</span></div>
+              <div class="site__body">
+                <div class="site__nav"><i></i><i></i><i></i><i></i></div>
+                <div class="site__hero">
+                  <div><small>Hi, I’m Kabir</small><b>Digital Marketer</b><span class="site__btn">View my work</span></div>
+                  <img src="assets/img/kabir.jpg" alt="" />
+                </div>
+                <div class="site__cards"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- Scene 2: SEO -->
+          <div class="scene" data-scene="1">
+            <div class="seo">
+              <div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="ring__bg"/><circle cx="60" cy="60" r="50" class="ring__fg"/></svg><div class="ring__val"><b data-ring>0</b><small>SEO score</small></div></div>
+              <div class="chips">
+                <span>Meta titles</span><span>Keywords</span><span>Schema</span><span>Backlinks</span><span>Page speed 98</span><span>LinkedIn sync</span><span>Content plan</span><span>Mobile-ready</span>
+              </div>
+            </div>
+          </div>
+          <!-- Scene 3: Google -->
+          <div class="scene" data-scene="2">
+            <div class="serp">
+              <div class="serp__logo"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></div>
+              <div class="serp__box"><span data-type="kabir digital marketer portfolio"></span><i class="caret"></i></div>
+              <div class="serp__res">
+                <span class="serp__one">#1</span>
+                <small>kabirahmed.com</small>
+                <b>Kabir – Digital Marketer | Portfolio</b>
+                <p>Digital marketer with expertise in SEO, content and growth marketing.</p>
+              </div>
+              <div class="serp__res serp__res--dim"><i></i><i></i></div>
+            </div>
+          </div>
+          <!-- Scene 4: Traffic -->
+          <div class="scene" data-scene="3">
+            <div class="traffic">
+              <div class="traffic__stats">
+                <div><b data-num="1240">0</b><small>Profile views</small></div>
+                <div><b data-num="86">0</b><small>Recruiter visits</small></div>
+                <div><b data-num="14">0</b><small>Client enquiries</small></div>
+              </div>
+              <svg class="traffic__chart" viewBox="0 0 400 140" preserveAspectRatio="none">
+                <path class="area" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12 L400 140 L0 140Z"/>
+                <path class="line" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12"/>
+              </svg>
+              <div class="visitors"><span>🏢 Employer</span><span>💼 Client</span><span>🧑‍💼 Recruiter</span></div>
+            </div>
+          </div>
+          <!-- Scene 5: Interview -->
+          <div class="scene" data-scene="4">
+            <div class="invite">
+              <div class="invite__card">
+                <div class="invite__top"><span class="check">✓</span><div><b>Interview invitation</b><small>From: Hiring Team</small></div></div>
+                <p>Hi Kabir, we came across your portfolio on Google and would love to talk about the Digital Marketing role.</p>
+                <div class="invite__when">📅 Thursday · 11:00 AM</div>
+              </div>
+              <div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <div class="caption" id="caption">We build your personal website</div>
+          <button class="big-play" id="bigPlay" aria-label="Play walkthrough">▶</button>
+        </div>
+        <div class="controls">
+          <button class="ctrl" id="playBtn" aria-label="Play">▶</button>
+          <div class="bar" id="bar"><div class="bar__fill" id="barFill"></div><div class="bar__marks"><i></i><i></i><i></i><i></i></div></div>
+          <span class="time" id="time">0:00 / 0:25</span>
+        </div>
+      </div>
+
+      <ol class="steps" id="steps">
+        <li data-step="0"><span>1</span><div><b>We build your personal website</b><small>Your CV becomes a professional portfolio site.</small></div></li>
+        <li data-step="1"><span>2</span><div><b>Optimize it with SEO &amp; digital marketing</b><small>Your expert tunes keywords, content and links.</small></div></li>
+        <li data-step="2"><span>3</span><div><b>Get it ranked on Google</b><small>Search your name + role — you show up first.</small></div></li>
+        <li data-step="3"><span>4</span><div><b>Drive the right traffic</b><small>Employers &amp; clients find and visit you.</small></div></li>
+        <li data-step="4"><span>5</span><div><b>Land your first interview. Guaranteed.</b><small>Outreach + coaching until the call is booked.</small></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="container cta-band__inner reveal">
+    <div>
+      <h2>Ready to get <span class="hl">discovered</span>?</h2>
+      <p class="muted">Turn your CV into a website, rank on Google and land your first interview. Only 30 spots left for the upcoming cohort.</p>
+    </div>
+    <div class="cta-band__btns">
+      <a href="apply.html" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
+      <a href="about.html" class="btn btn--ghost">About ImpactUs <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="index.html" class="brand brand--light">
+        <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+        <span class="brand__word">Impact<span>Us</span></span>
+      </a>
+      <p class="footer__tag">Get discovered. Get chosen.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="program.html">Program</a><a href="success-stories.html">Success Stories</a><a href="how-it-works.html">How It Works</a>
+    </div>
+    <div>
+      <h5>More</h5>
+      <a href="about.html">About</a><a href="faq.html">FAQ</a><a href="apply.html">Apply</a>
+    </div>
+  </div>
+  <div class="container footer__base">© <span id="year">2026</span> ImpactUs. All rights reserved.</div>
+</footer>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

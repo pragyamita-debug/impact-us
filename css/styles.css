@@ -600,3 +600,61 @@ p { margin: 0; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* =========================================================
+   Multi-page additions
+   ========================================================= */
+body { animation: pageIn .45s ease both; }
+body.is-leaving { opacity: 0; transform: translateY(6px); transition: opacity .2s ease, transform .2s ease; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(8px); } }
+
+/* first section on an inner page gets a soft glow banner */
+.section--page { padding-top: clamp(56px, 8vw, 96px); overflow: hidden; }
+.section--page::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 420px; pointer-events: none;
+  background: radial-gradient(50% 80% at 80% 0%, var(--wash-1), transparent 70%),
+              radial-gradient(40% 70% at 10% 10%, var(--wash-2), transparent 70%);
+}
+.section--page > .container { position: relative; }
+
+/* explore grid on Home */
+.explore { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.xcard {
+  position: relative; display: flex; flex-direction: column; gap: 10px; padding: 28px 26px 24px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+  transition: transform .3s ease, border-color .3s, box-shadow .3s;
+}
+.xcard::after { content: ""; position: absolute; inset: auto -30% -70% -30%; height: 90%; background: radial-gradient(closest-side, var(--glow), transparent); opacity: 0; transition: opacity .4s; }
+.xcard:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: var(--shadow); }
+.xcard:hover::after { opacity: 1; }
+.xcard__n { font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif; font-weight: 800; color: var(--b); font-size: .95rem; }
+.xcard h3 { font-size: 1.35rem; }
+.xcard p { color: var(--muted); flex: 1; position: relative; z-index: 1; }
+.xcard__go { font-weight: 700; color: var(--accent); position: relative; z-index: 1; transition: transform .25s; }
+.xcard:hover .xcard__go { transform: translateX(4px); }
+.xcard--hot { border: 2px solid var(--accent); }
+
+/* CTA band at the end of each page */
+.cta-band { padding: 0 0 clamp(64px, 9vw, 100px); }
+.section--alt + .cta-band { background: var(--bg-2); }
+.cta-band__inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
+  padding: 40px 44px; border-radius: 24px; border: 1px solid var(--line);
+  background: linear-gradient(120deg, var(--surface), var(--surface-2));
+  box-shadow: var(--shadow); position: relative; overflow: hidden;
+}
+.cta-band__inner::before { content: ""; position: absolute; right: -10%; top: -60%; width: 50%; height: 220%; background: radial-gradient(closest-side, var(--glow), transparent 70%); pointer-events: none; }
+.cta-band__inner > * { position: relative; }
+.cta-band h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 8px; }
+.cta-band p { max-width: 520px; }
+.cta-band__btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 920px) {
+  .explore { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .explore { grid-template-columns: 1fr; }
+  .cta-band__inner { padding: 28px 22px; }
+  .cta-band__btns .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { body { animation: none; } }

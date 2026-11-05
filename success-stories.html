@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Success Stories — ImpactUs</title>
+  <meta name="description" content="Same skills. Different journeys. Real outcomes — Smith, Sandra and Kabir." />
+  <meta property="og:title" content="ImpactUs — Get discovered. Get chosen." />
+  <meta property="og:description" content="Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. Guaranteed." />
+  <meta property="og:image" content="assets/img/logo.png" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Apply saved theme before paint (avoids a flash of the wrong colours)
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search).get('theme');
+        var t = p || localStorage.getItem('impactus-theme');
+        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="brand" aria-label="ImpactUs home">
+      <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+      <span class="brand__word">Impact<span>Us</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="program.html">Program</a>
+      <a href="success-stories.html" class="is-active" aria-current="page">Success Stories</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
+        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
+        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
+        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
+      </div>
+      <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<main class="page page--stories">
+
+<!-- ============ 3. SUCCESS STORIES ============ -->
+<section class="section section--page section--alt" id="stories">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">Success stories</span>
+      <h2 class="reveal">Same skills. Different journeys.<br /><span class="hl">Real outcomes.</span></h2>
+      <p class="section__sub reveal">Same degree. Same ambition. Tap a story to see how it played out.</p>
+    </div>
+
+    <div class="stories">
+      <button class="story reveal" data-story="smith">
+        <img src="assets/img/smith.jpg" alt="Smith" loading="lazy" />
+        <div class="story__shade"></div>
+        <div class="story__text">
+          <h3>Smith</h3>
+          <p>Applied to 1,000+ jobs. Didn’t get a single response.</p>
+        </div>
+        <span class="story__go" aria-hidden="true">›</span>
+      </button>
+      <button class="story reveal" data-story="sandra">
+        <img src="assets/img/sandra.jpg" alt="Sandra" loading="lazy" />
+        <div class="story__shade"></div>
+        <div class="story__text">
+          <h3>Sandra</h3>
+          <p>Did more. Sent personal follow-ups with clients. Yet silence stayed.</p>
+        </div>
+        <span class="story__go" aria-hidden="true">›</span>
+      </button>
+      <button class="story story--win reveal" data-story="kabir">
+        <img src="assets/img/kabir.jpg" alt="Kabir" loading="lazy" />
+        <div class="story__shade"></div>
+        <div class="story__text">
+          <h3>Kabir</h3>
+          <p>Flipped the script. He stopped searching &amp; started getting discovered.</p>
+        </div>
+        <span class="story__go" aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <!-- Similar skills. Different outcomes. -->
+    <div class="equation">
+      <p class="equation__lead reveal">Similar skills. <span class="hl">Different outcomes.</span></p>
+      <div class="equation__row">
+        <span class="eq reveal">Proof</span><span class="eq__op reveal">+</span>
+        <span class="eq reveal">Visibility</span><span class="eq__op reveal">+</span>
+        <span class="eq reveal">Network</span>
+      </div>
+      <p class="scrub" data-scrub>Your degree alone gives none. How do you activate all 3?</p>
+      <a href="how-it-works.html" class="btn btn--primary reveal">See how it works <span class="arrow">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="container cta-band__inner reveal">
+    <div>
+      <h2>Ready to get <span class="hl">discovered</span>?</h2>
+      <p class="muted">Turn your CV into a website, rank on Google and land your first interview. Only 30 spots left for the upcoming cohort.</p>
+    </div>
+    <div class="cta-band__btns">
+      <a href="apply.html" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
+      <a href="how-it-works.html" class="btn btn--ghost">See How It Works <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="index.html" class="brand brand--light">
+        <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+        <span class="brand__word">Impact<span>Us</span></span>
+      </a>
+      <p class="footer__tag">Get discovered. Get chosen.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="program.html">Program</a><a href="success-stories.html">Success Stories</a><a href="how-it-works.html">How It Works</a>
+    </div>
+    <div>
+      <h5>More</h5>
+      <a href="about.html">About</a><a href="faq.html">FAQ</a><a href="apply.html">Apply</a>
+    </div>
+  </div>
+  <div class="container footer__base">© <span id="year">2026</span> ImpactUs. All rights reserved.</div>
+</footer>
+
+<!-- Story modal -->
+<div class="modal" id="storyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="storyTitle">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__box">
+    <button class="modal__x" data-close aria-label="Close">×</button>
+    <div class="modal__media"><img id="storyImg" src="" alt="" /></div>
+    <div class="modal__body">
+      <span class="eyebrow" id="storyTag"></span>
+      <h3 id="storyTitle"></h3>
+      <p id="storyText"></p>
+      <ul class="checks checks--sm" id="storyPoints"></ul>
+      <a href="apply.html" class="btn btn--primary">Start my journey <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

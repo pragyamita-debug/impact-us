@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Program — ImpactUs</title>
+  <meta name="description" content="The transformative program: build your profile, grow your network, land your first interview." />
+  <meta property="og:title" content="ImpactUs — Get discovered. Get chosen." />
+  <meta property="og:description" content="Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. Guaranteed." />
+  <meta property="og:image" content="assets/img/logo.png" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Apply saved theme before paint (avoids a flash of the wrong colours)
+    (function () {
+      try {
+        var p = new URLSearchParams(location.search).get('theme');
+        var t = p || localStorage.getItem('impactus-theme');
+        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="brand" aria-label="ImpactUs home">
+      <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+      <span class="brand__word">Impact<span>Us</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="program.html" class="is-active" aria-current="page">Program</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
+        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
+        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
+        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
+      </div>
+      <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<main class="page page--program">
+
+<!-- ============ 2. PROGRAM ============ -->
+<section class="section section--page" id="program">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">Your transformation</span>
+      <h2 class="reveal">The transformative program to<br />get you <span class="hl">discovered</span> <span class="hl2">and hired.</span></h2>
+      <p class="section__sub reveal">One path. All 3 advantages unlocked.</p>
+    </div>
+
+    <div class="path">
+      <article class="path__card reveal">
+        <div class="icon-box" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="9" width="38" height="30" rx="4"/><circle cx="16" cy="21" r="4"/><path d="M10 32c1.5-4 10.5-4 12 0M27 19h10M27 25h10M27 31h6"/></svg>
+        </div>
+        <h3><span class="num num--a">01</span> Build Your Profile</h3>
+        <p>Turn your CV into a powerful, professional website. Make your work impossible to overlook.</p>
+      </article>
+      <div class="path__arrow" aria-hidden="true">→</div>
+      <article class="path__card reveal">
+        <div class="icon-box icon-box--b" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="15" r="6"/><circle cx="11" cy="19" r="4.5"/><circle cx="37" cy="19" r="4.5"/><path d="M13 39c0-6 5-10 11-10s11 4 11 10M3 36c0-4 3-7 8-7M45 36c0-4-3-7-8-7"/></svg>
+        </div>
+        <h3><span class="num num--b">02</span> Grow Your Network</h3>
+        <p>Get visibility, build credibility, and attract the right opportunities. Get discovered and trusted for your skills.</p>
+      </article>
+      <div class="path__arrow" aria-hidden="true">→</div>
+      <article class="path__card reveal">
+        <div class="icon-box" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="36" height="32" rx="4"/><path d="M6 18h36M15 5v8M33 5v8"/><rect x="16" y="24" width="16" height="11" rx="2"/><path d="M20 24v-2h8v2"/></svg>
+        </div>
+        <h3><span class="num num--a">03</span> Land Your First Interview</h3>
+        <p>With expert guidance and proven outreach, get your first job interview or client conversation. <strong>Guaranteed.</strong></p>
+      </article>
+    </div>
+
+    <!-- Deep dive: 01 Build your profile -->
+    <div class="feature">
+      <div class="feature__copy reveal">
+        <span class="eyebrow">01 · Build your profile</span>
+        <h3 class="feature__title">Don’t just speak about your skills. <strong>Show the proof.</strong></h3>
+        <ul class="checks">
+          <li>Personal portfolio website</li>
+          <li>Personal brand coaching</li>
+          <li>Digital growth resources</li>
+        </ul>
+        <span class="pill pill--a">Identity that people can search and discover</span>
+      </div>
+      <div class="feature__media reveal">
+        <div class="shot"><img src="assets/img/proof-google.jpg" alt="Google search results showing a candidate's portfolio website, LinkedIn, GitHub and Medium on the first page" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <!-- 02 Grow your network -->
+    <div class="feature feature--flip">
+      <div class="feature__copy reveal">
+        <span class="eyebrow">02 · Grow your network</span>
+        <h3 class="feature__title">The right opportunity comes when you are <strong>visible.</strong></h3>
+        <ul class="checks">
+          <li>Gain experience in digital growth</li>
+          <li>Personal brand group coaching</li>
+          <li>Self-paced LinkedIn growth modules</li>
+        </ul>
+        <span class="pill pill--b">Professional network that unlocks career opportunities</span>
+      </div>
+      <div class="feature__media reveal">
+        <div class="shot shot--tall"><img src="assets/img/network-linkedin.jpg" alt="An optimised LinkedIn profile with featured projects, skills and activity" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <!-- 03 Land your first opportunity -->
+    <div class="feature">
+      <div class="feature__copy reveal">
+        <span class="eyebrow">03 · Land your first opportunity</span>
+        <h3 class="feature__title">Your first job interview or client conversation. <strong>Guaranteed.</strong></h3>
+        <ul class="checks">
+          <li>Dedicated outreach CRM</li>
+          <li>Outreach and application coaching</li>
+          <li>Access to company and client networks</li>
+        </ul>
+        <span class="pill pill--a">System that gets you chosen for your first real opportunity</span>
+      </div>
+      <div class="feature__media reveal">
+        <div class="shot"><img src="assets/img/outreach-crm.jpg" alt="Outreach CRM dashboard tracking emails sent, responses and clients" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <!-- Plans -->
+    <div class="plans">
+      <div class="plan reveal">
+        <span class="plan__tag">Starter</span>
+        <h4>CV → Website</h4>
+        <p class="muted">Your CV rebuilt as a clean, professional personal website.</p>
+        <ul class="checks checks--sm">
+          <li>Personal portfolio website</li>
+          <li>Digital growth resources</li>
+          <li>Self-paced LinkedIn growth modules</li>
+        </ul>
+        <a href="apply.html?plan=Starter" class="btn btn--ghost btn--block" data-plan="Starter">Choose Starter</a>
+      </div>
+      <div class="plan plan--premium reveal">
+        <span class="plan__tag plan__tag--hot">Premium · Most chosen</span>
+        <h4>Get discovered &amp; hired</h4>
+        <p class="muted">Everything in Starter, plus a dedicated expert who pushes your website up on Google.</p>
+        <ul class="checks checks--sm">
+          <li>1:1 expert guidance</li>
+          <li>SEO &amp; digital marketing for your website</li>
+          <li>Google ranking for your name &amp; role</li>
+          <li>Outreach CRM + application coaching</li>
+          <li><strong>First interview guaranteed</strong></li>
+        </ul>
+        <a href="apply.html?plan=Premium" class="btn btn--primary btn--block" data-plan="Premium">Go Premium <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="container cta-band__inner reveal">
+    <div>
+      <h2>Ready to get <span class="hl">discovered</span>?</h2>
+      <p class="muted">Turn your CV into a website, rank on Google and land your first interview. Only 30 spots left for the upcoming cohort.</p>
+    </div>
+    <div class="cta-band__btns">
+      <a href="apply.html" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
+      <a href="success-stories.html" class="btn btn--ghost">See Success Stories <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="index.html" class="brand brand--light">
+        <img src="assets/img/logo-mark.png" alt="" class="brand__mark" width="34" height="32" />
+        <span class="brand__word">Impact<span>Us</span></span>
+      </a>
+      <p class="footer__tag">Get discovered. Get chosen.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="program.html">Program</a><a href="success-stories.html">Success Stories</a><a href="how-it-works.html">How It Works</a>
+    </div>
+    <div>
+      <h5>More</h5>
+      <a href="about.html">About</a><a href="faq.html">FAQ</a><a href="apply.html">Apply</a>
+    </div>
+  </div>
+  <div class="container footer__base">© <span id="year">2026</span> ImpactUs. All rights reserved.</div>
+</footer>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
