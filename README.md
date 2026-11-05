@@ -7,7 +7,7 @@ Plain HTML / CSS / JS — no build step.
 ## Pages (each nav tab opens its own page)
 | Nav tab | File | Content |
 |---|---|---|
-| Home | `index.html` | Hero "You have the skills. But can the world notice it?", 264 million problem band, Explore cards linking to every page |
+| Home | `index.html` | Hero, 264 million problem band, How It Works video, single-line auto-moving Explore carousel linking to every page |
 | Program | `program.html` | 3-step path, proof / visibility / outreach deep-dives, Starter vs Premium |
 | Success Stories | `success-stories.html` | Smith, Sandra, Kabir cards (click → story popup), Proof + Visibility + Network |
 | How It Works | `how-it-works.html` | Animated 25-sec walkthrough player synced to 5 steps (`?play=1` autoplays) |

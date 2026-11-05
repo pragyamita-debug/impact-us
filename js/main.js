@@ -13,6 +13,55 @@
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var params = new URLSearchParams(location.search);
 
+  /* ---------- single-line auto carousel (Home "Explore") ----------
+     One row of cards that moves by itself; the centre card is highlighted.
+     Runs before the theme/link code so the cloned cards get the same link handling. */
+  var car = $('#carousel'), track = $('#carTrack');
+  if (car && track) {
+    var orig = $$('.xcard', track), n = orig.length;
+    // three copies (before / real / after) so it can loop forever without jumping back
+    [0, 1].forEach(function (pass) {
+      orig.forEach(function (c) {
+        var cl = c.cloneNode(true); cl.setAttribute('aria-hidden', 'true'); cl.setAttribute('tabindex', '-1');
+        if (pass === 0) track.insertBefore(cl, orig[0]); else track.appendChild(cl);
+      });
+    });
+    var all = $$('.xcard', track), idx = n, timer = null, dotsWrap = $('#carDots');
+    dotsWrap.innerHTML = orig.map(function (_, i) { return '<button class="car-dot" aria-label="Show card ' + (i + 1) + '" data-i="' + i + '"></button>'; }).join('');
+    var dots = $$('.car-dot', dotsWrap);
+    var place = function (animate) {
+      track.style.transition = animate ? '' : 'none';
+      var c = all[idx], x = car.clientWidth / 2 - (c.offsetLeft + c.offsetWidth / 2);
+      track.style.transform = 'translateX(' + x + 'px)';
+      all.forEach(function (el, i) { el.classList.toggle('is-active', i === idx); });
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx % n); });
+      if (!animate) { void track.offsetWidth; track.style.transition = ''; }
+    };
+    var go = function (to) { idx = to; place(true); };
+    track.addEventListener('transitionend', function (e) {
+      if (e.target !== track) return;
+      if (idx >= 2 * n) { idx -= n; place(false); }
+      else if (idx < n) { idx += n; place(false); }
+    });
+    var start = function () { stop(); if (!reduceMotion) timer = setInterval(function () { go(idx + 1); }, 2600); };
+    var stop = function () { clearInterval(timer); };
+    $('#carNext').addEventListener('click', function () { go(idx + 1); start(); });
+    $('#carPrev').addEventListener('click', function () { go(idx - 1); start(); });
+    dots.forEach(function (d) { d.addEventListener('click', function () { go(n + +d.dataset.i); start(); }); });
+    car.addEventListener('mouseenter', stop); car.addEventListener('mouseleave', start);
+    car.addEventListener('focusin', stop); car.addEventListener('focusout', start);
+    // swipe on phones
+    var sx = null;
+    car.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; stop(); }, { passive: true });
+    car.addEventListener('touchend', function (e) {
+      if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1)); start();
+    });
+    window.addEventListener('resize', function () { place(false); });
+    window.addEventListener('load', function () { place(false); });
+    place(false); start();
+  }
+
   /* ---------- theme switcher (kept across pages) ---------- */
   var themeColors = { midnight: '#0b0b0e', lavender: '#faf7ff', sage: '#fbf8f0' };
   function carryTheme(t) {
@@ -243,6 +292,16 @@
       li.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); seekScene(i); } });
     });
     render();
+
+    // "Watch 2-Min Overview" on Home scrolls to the player and starts it
+    $$('[data-play]').forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        e.preventDefault();
+        var sec = document.getElementById('how');
+        if (sec) sec.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+        t = 0; cur = -1; render(); setTimeout(play, reduceMotion ? 0 : 600);
+      });
+    });
 
     if (params.get('play')) { setTimeout(play, 500); }
     else if ('IntersectionObserver' in window && !reduceMotion) {

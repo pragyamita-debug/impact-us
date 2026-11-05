@@ -72,7 +72,7 @@
       <p class="hero__sub reveal">Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. <strong>Guaranteed.</strong></p>
       <div class="hero__cta reveal">
         <a href="apply.html" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
-        <a href="how-it-works.html?play=1" class="btn btn--ghost">
+        <a href="#how" class="btn btn--ghost" data-play>
           <span class="play-dot" aria-hidden="true">▶</span> Watch 2-Min Overview
         </a>
       </div>
@@ -134,22 +134,132 @@
 </section>
 
 
-<!-- ============ EXPLORE (links to every tab page) ============ -->
-<section class="section">
+<!-- ============ 4. HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">How it works</span>
+      <h2 class="reveal">See How It <span class="hl2">Actually Works.</span></h2>
+      <p class="section__sub reveal">A short walkthrough of how we turn your CV into a high-visibility personal website and get it discovered on Google.</p>
+    </div>
+
+    <div class="how">
+      <div class="player reveal" id="player">
+        <div class="screen" id="screen">
+          <!-- Scene 1: CV → Website -->
+          <div class="scene" data-scene="0">
+            <div class="cv">
+              <div class="cv__head"><span class="cv__ph"></span><div><b>CURRICULUM VITAE</b><i></i></div></div>
+              <i></i><i></i><i class="s"></i><i></i><i class="s"></i><i></i>
+            </div>
+            <div class="morph-arrow">➜</div>
+            <div class="site">
+              <div class="browser-dots"><i></i><i></i><i></i><span>kabirahmed.com</span></div>
+              <div class="site__body">
+                <div class="site__nav"><i></i><i></i><i></i><i></i></div>
+                <div class="site__hero">
+                  <div><small>Hi, I’m Kabir</small><b>Digital Marketer</b><span class="site__btn">View my work</span></div>
+                  <img src="assets/img/kabir.jpg" alt="" />
+                </div>
+                <div class="site__cards"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <!-- Scene 2: SEO -->
+          <div class="scene" data-scene="1">
+            <div class="seo">
+              <div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="ring__bg"/><circle cx="60" cy="60" r="50" class="ring__fg"/></svg><div class="ring__val"><b data-ring>0</b><small>SEO score</small></div></div>
+              <div class="chips">
+                <span>Meta titles</span><span>Keywords</span><span>Schema</span><span>Backlinks</span><span>Page speed 98</span><span>LinkedIn sync</span><span>Content plan</span><span>Mobile-ready</span>
+              </div>
+            </div>
+          </div>
+          <!-- Scene 3: Google -->
+          <div class="scene" data-scene="2">
+            <div class="serp">
+              <div class="serp__logo"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></div>
+              <div class="serp__box"><span data-type="kabir digital marketer portfolio"></span><i class="caret"></i></div>
+              <div class="serp__res">
+                <span class="serp__one">#1</span>
+                <small>kabirahmed.com</small>
+                <b>Kabir – Digital Marketer | Portfolio</b>
+                <p>Digital marketer with expertise in SEO, content and growth marketing.</p>
+              </div>
+              <div class="serp__res serp__res--dim"><i></i><i></i></div>
+            </div>
+          </div>
+          <!-- Scene 4: Traffic -->
+          <div class="scene" data-scene="3">
+            <div class="traffic">
+              <div class="traffic__stats">
+                <div><b data-num="1240">0</b><small>Profile views</small></div>
+                <div><b data-num="86">0</b><small>Recruiter visits</small></div>
+                <div><b data-num="14">0</b><small>Client enquiries</small></div>
+              </div>
+              <svg class="traffic__chart" viewBox="0 0 400 140" preserveAspectRatio="none">
+                <path class="area" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12 L400 140 L0 140Z"/>
+                <path class="line" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12"/>
+              </svg>
+              <div class="visitors"><span>🏢 Employer</span><span>💼 Client</span><span>🧑‍💼 Recruiter</span></div>
+            </div>
+          </div>
+          <!-- Scene 5: Interview -->
+          <div class="scene" data-scene="4">
+            <div class="invite">
+              <div class="invite__card">
+                <div class="invite__top"><span class="check">✓</span><div><b>Interview invitation</b><small>From: Hiring Team</small></div></div>
+                <p>Hi Kabir, we came across your portfolio on Google and would love to talk about the Digital Marketing role.</p>
+                <div class="invite__when">📅 Thursday · 11:00 AM</div>
+              </div>
+              <div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <div class="caption" id="caption">We build your personal website</div>
+          <button class="big-play" id="bigPlay" aria-label="Play walkthrough">▶</button>
+        </div>
+        <div class="controls">
+          <button class="ctrl" id="playBtn" aria-label="Play">▶</button>
+          <div class="bar" id="bar"><div class="bar__fill" id="barFill"></div><div class="bar__marks"><i></i><i></i><i></i><i></i></div></div>
+          <span class="time" id="time">0:00 / 0:25</span>
+        </div>
+      </div>
+
+      <ol class="steps" id="steps">
+        <li data-step="0"><span>1</span><div><b>We build your personal website</b><small>Your CV becomes a professional portfolio site.</small></div></li>
+        <li data-step="1"><span>2</span><div><b>Optimize it with SEO &amp; digital marketing</b><small>Your expert tunes keywords, content and links.</small></div></li>
+        <li data-step="2"><span>3</span><div><b>Get it ranked on Google</b><small>Search your name + role — you show up first.</small></div></li>
+        <li data-step="3"><span>4</span><div><b>Drive the right traffic</b><small>Employers &amp; clients find and visit you.</small></div></li>
+        <li data-step="4"><span>5</span><div><b>Land your first interview. Guaranteed.</b><small>Outreach + coaching until the call is booked.</small></div></li>
+      </ol>
+    </div>
+    <p class="how__more reveal"><a href="how-it-works.html" class="btn btn--ghost">Open the full How It Works page <span class="arrow">→</span></a></p>
+  </div>
+</section>
+
+<!-- ============ EXPLORE (single-line auto carousel) ============ -->
+<section class="section section--alt explore-sec">
   <div class="container">
     <div class="section__head">
       <span class="eyebrow reveal">Explore ImpactUs</span>
       <h2 class="reveal">One path. <span class="hl">All 3 advantages unlocked.</span></h2>
       <p class="section__sub reveal">Proof + Visibility + Network. Pick where you want to start.</p>
     </div>
-    <div class="explore">
-      <a href="program.html" class="xcard reveal"><span class="xcard__n">01</span><h3>Program</h3><p>Build your profile, grow your network, land your first interview.</p><span class="xcard__go">Open →</span></a>
-      <a href="success-stories.html" class="xcard reveal"><span class="xcard__n">02</span><h3>Success Stories</h3><p>Smith, Sandra and Kabir — same skills, different outcomes.</p><span class="xcard__go">Open →</span></a>
-      <a href="how-it-works.html" class="xcard reveal"><span class="xcard__n">03</span><h3>How It Works</h3><p>Watch your CV become a website that ranks on Google.</p><span class="xcard__go">Open →</span></a>
-      <a href="about.html" class="xcard reveal"><span class="xcard__n">04</span><h3>About</h3><p>Our mission to get talent discovered and trusted.</p><span class="xcard__go">Open →</span></a>
-      <a href="faq.html" class="xcard reveal"><span class="xcard__n">05</span><h3>FAQ</h3><p>The interview guarantee, Google ranking, expert guidance.</p><span class="xcard__go">Open →</span></a>
-      <a href="apply.html" class="xcard xcard--hot reveal"><span class="xcard__n">06</span><h3>Apply Now</h3><p>Only 30 spots left for our upcoming cohort.</p><span class="xcard__go">Apply ↗</span></a>
+  </div>
+  <div class="carousel reveal" id="carousel" aria-roledescription="carousel" aria-label="Explore ImpactUs pages">
+    <div class="carousel__track" id="carTrack">
+        <a href="program.html" class="xcard"><span class="xcard__n">01</span><h3>Program</h3><p>Build your profile, grow your network, land your first interview.</p><span class="xcard__go">Open →</span></a>
+        <a href="success-stories.html" class="xcard"><span class="xcard__n">02</span><h3>Success Stories</h3><p>Smith, Sandra and Kabir — same skills, different outcomes.</p><span class="xcard__go">Open →</span></a>
+        <a href="how-it-works.html" class="xcard"><span class="xcard__n">03</span><h3>How It Works</h3><p>Watch your CV become a website that ranks on Google.</p><span class="xcard__go">Open →</span></a>
+        <a href="about.html" class="xcard"><span class="xcard__n">04</span><h3>About</h3><p>Our mission to get talent discovered and trusted.</p><span class="xcard__go">Open →</span></a>
+        <a href="faq.html" class="xcard"><span class="xcard__n">05</span><h3>FAQ</h3><p>The interview guarantee, Google ranking, expert guidance.</p><span class="xcard__go">Open →</span></a>
+        <a href="apply.html" class="xcard xcard--hot"><span class="xcard__n">06</span><h3>Apply Now</h3><p>Only 30 spots left for our upcoming cohort.</p><span class="xcard__go">Apply ↗</span></a>
     </div>
+  </div>
+  <div class="carousel__nav">
+    <button class="car-btn" id="carPrev" aria-label="Previous">←</button>
+    <div class="car-dots" id="carDots"></div>
+    <button class="car-btn" id="carNext" aria-label="Next">→</button>
   </div>
 </section>
 

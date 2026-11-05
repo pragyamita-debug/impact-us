@@ -658,3 +658,23 @@ body.is-leaving { opacity: 0; transform: translateY(6px); transition: opacity .2
   .cta-band__btns .btn { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { body { animation: none; } }
+
+/* ---------- Home: single-line auto carousel ---------- */
+.explore-sec .section__head { margin-bottom: 40px; }
+.carousel { overflow: hidden; padding: 18px 0 26px; position: relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.carousel__track { display: flex; gap: 22px; width: max-content; transition: transform .7s cubic-bezier(.25,.8,.25,1); will-change: transform; }
+.carousel .xcard { width: 300px; flex: none; min-height: 210px; opacity: .55; transform: scale(.92);
+  transition: transform .6s ease, opacity .6s ease, border-color .4s, box-shadow .4s; }
+.carousel .xcard.is-active { opacity: 1; transform: scale(1.04); border: 2px solid var(--accent); box-shadow: var(--shadow); }
+.carousel .xcard.is-active::after { opacity: 1; }
+.carousel .xcard:hover { opacity: 1; }
+.carousel__nav { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 8px; }
+.car-btn { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); font-size: 1.05rem; transition: background .25s, color .25s, border-color .25s; }
+.car-btn:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.car-dots { display: flex; gap: 8px; }
+.car-dot { width: 9px; height: 9px; border-radius: 999px; border: 0; padding: 0; background: var(--line); transition: width .35s, background .35s; }
+.car-dot.is-active { width: 28px; background: var(--accent); }
+.how__more { text-align: center; margin-top: 36px; }
+@media (max-width: 560px) { .carousel .xcard { width: 76vw; } }
