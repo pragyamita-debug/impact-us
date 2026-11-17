@@ -160,6 +160,8 @@ p { margin: 0; }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 18px; }
 .brand { display: inline-flex; align-items: center; gap: 9px; }
 .brand__mark { width: 34px; height: auto; }
+.brand__logo { height: 58px; width: auto; margin-left: -8px; }
+@media (max-width: 600px) { .brand__logo { height: 46px; } }
 .brand__word { font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.03em; }
 .brand__word span { color: var(--accent); }
 .nav__links { display: flex; gap: 4px; }

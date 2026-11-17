@@ -354,7 +354,7 @@
       if (pages[i + 1]) { pages[i + 1].classList.add('bpage--back'); leaf.appendChild(pages[i + 1]); }
       leaves.push(leaf);
     }
-    var L = leaves.length, flipped = 0, labels = ['Cover', 'Chapter 01–02', 'Chapter 03', 'Chapter 04', 'Chapter 05', 'The end'];
+    var L = leaves.length, flipped = 0, labels = ['Cover', 'Program', 'How It Works', 'See It in Action', 'Success Stories', 'FAQ & Apply', 'The end'];
     var isPhone = function () { return window.matchMedia('(max-width: 820px)').matches; };
     var tabs = $$('.book-tabs [data-goto]');
     var mobilePage = 0;
