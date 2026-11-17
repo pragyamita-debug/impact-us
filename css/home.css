@@ -32,7 +32,27 @@
 .h-hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
 .h-link { font-weight: 700; color: var(--text); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
 .h-link:hover { color: var(--accent); }
-.h-hero__visual img { width: 100%; height: auto; border-radius: 26px; box-shadow: var(--shadow); aspect-ratio: 4 / 3; object-fit: cover; }
+/* hero photo blends into the page: soft faded edges, a light pink wash, and the brand swoosh */
+.h-hero__visual { position: relative; }
+.h-hero__visual::before {
+  content: ""; position: absolute; inset: -12% -16% -12% -10%; z-index: 0; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(255, 140, 200, .45), rgba(255, 246, 250, 0) 75%);
+}
+.h-hero__photo {
+  position: relative; z-index: 1; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 86%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 14%, #000 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 86%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 14%, #000 80%, transparent 100%);
+          mask-composite: intersect;
+}
+.h-hero__photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; filter: saturate(.92) contrast(.97); }
+.h-hero__photo::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(120deg, rgba(255, 220, 236, .55) 0%, rgba(255, 220, 236, 0) 38%), linear-gradient(0deg, rgba(230, 21, 122, .10), rgba(230, 21, 122, .10));
+  mix-blend-mode: soft-light;
+}
+.h-swoosh { position: absolute; z-index: 2; right: -2%; bottom: -4%; width: 46%; pointer-events: none; overflow: visible; }
+.h-swoosh path { fill: none; stroke: url(#swg); stroke-width: 16; stroke-linecap: round; }
 
 
 /* ---------- book section ---------- */
