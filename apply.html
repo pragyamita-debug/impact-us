@@ -14,16 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <script>
-    // Apply saved theme before paint (avoids a flash of the wrong colours)
-    (function () {
-      try {
-        var p = new URLSearchParams(location.search).get('theme');
-        var t = p || localStorage.getItem('impactus-theme');
-        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
 </head>
 <body>
 
@@ -44,11 +34,6 @@
     </nav>
 
     <div class="nav__right">
-      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
-        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
-        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
-        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
-      </div>
       <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>

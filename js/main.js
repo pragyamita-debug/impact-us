@@ -62,34 +62,9 @@
     place(false); start();
   }
 
-  /* ---------- theme switcher (kept across pages) ---------- */
-  var themeColors = { midnight: '#0b0b0e', lavender: '#fff6fa', sage: '#fbf8f0' };
-  function carryTheme(t) {
-    // add ?theme=… to every internal page link, so the theme follows you even where storage is blocked
-    $$('a[href$=".html"], a[href*=".html?"]').forEach(function (a) {
-      var href = a.getAttribute('href');
-      if (/^https?:/.test(href)) return;
-      var parts = href.split('#'), base = parts[0], hash = parts[1] ? '#' + parts[1] : '';
-      var q = base.indexOf('?') > -1 ? base.slice(base.indexOf('?') + 1) : '';
-      var path = base.split('?')[0];
-      var sp = new URLSearchParams(q); sp.set('theme', t);
-      a.setAttribute('href', path + '?' + sp.toString() + hash);
-    });
-  }
-  function setTheme(t, save) {
-    root.setAttribute('data-theme', t);
-    $$('[data-set-theme]').forEach(function (b) { b.setAttribute('aria-checked', String(b.dataset.setTheme === t)); });
-    var m = $('meta[name="theme-color"]'); if (m) m.setAttribute('content', themeColors[t]);
-    if (save) { try { localStorage.setItem('impactus-theme', t); } catch (e) {} }
-    carryTheme(t);
-  }
-  setTheme(root.getAttribute('data-theme') || 'lavender', false);
-  $$('[data-set-theme]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      setTheme(b.dataset.setTheme, true);
-      try { var u = new URL(location.href); u.searchParams.set('theme', b.dataset.setTheme); history.replaceState(null, '', u); } catch (e) {}
-    });
-  });
+  /* ---------- single light theme ---------- */
+  root.setAttribute('data-theme', 'lavender');
+  try { localStorage.removeItem('impactus-theme'); } catch (e) {}
 
   /* ---------- nav ---------- */
   var nav = $('#nav'), burger = $('#burger'), links = $('#navLinks');
@@ -418,12 +393,12 @@
         if (b.closest('.book-tabs')) bookEl.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
       });
     });
-    // click near the outer edge of a page to turn it
+    // click anywhere on a page to turn it: right page → forward, left page → back
     stage.addEventListener('click', function (e) {
-      if (isPhone() || e.target.closest('a, button, summary, details')) return;
-      var r = stage.getBoundingClientRect(), x = e.clientX - r.left;
-      if (x > r.width * 0.86) flipTo(flipped + 1);
-      else if (x < r.width * 0.14) flipTo(flipped - 1);
+      if (e.target.closest('a, button, summary, details')) return;
+      var pg = e.target.closest('.bpage'); if (!pg) return;
+      if (isPhone()) { showPhonePage(mobilePage + 1); return; }
+      if (pg.classList.contains('bpage--back')) flipTo(flipped - 1); else flipTo(flipped + 1);
     });
     document.addEventListener('keydown', function (e) {
       var r = bookEl.getBoundingClientRect();
@@ -431,6 +406,34 @@
       if (e.key === 'ArrowRight') { e.preventDefault(); $('#bookNext').click(); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); $('#bookPrev').click(); }
     });
+
+    /* automatic page turning: runs while the book is on screen; any click/tap/key
+       restarts the countdown, an open FAQ answer holds the page, the ❚❚ button stops it. */
+    var AUTO_MS = 4500, autoOn = !reduceMotion, inView = false, autoTimer = null, autoBtn = $('#bookAuto');
+    var autoTick = function () {
+      if (!autoOn || !inView || document.hidden || $('details[open]', stage)) return scheduleAuto();
+      if (isPhone()) showPhonePage(mobilePage >= pages.length - 1 ? 0 : mobilePage + 1);
+      else flipTo(flipped >= L ? 0 : flipped + 1);
+      scheduleAuto();
+    };
+    var scheduleAuto = function (delay) { clearTimeout(autoTimer); if (autoOn) autoTimer = setTimeout(autoTick, delay || AUTO_MS); };
+    var paintAuto = function () {
+      if (!autoBtn) return;
+      autoBtn.textContent = autoOn ? '❚❚' : '▶';
+      autoBtn.setAttribute('aria-label', autoOn ? 'Stop automatic page turning' : 'Start automatic page turning');
+      autoBtn.title = autoOn ? 'Pause auto-turn' : 'Play auto-turn';
+    };
+    if (autoBtn) autoBtn.addEventListener('click', function () { autoOn = !autoOn; paintAuto(); autoOn ? scheduleAuto(1200) : clearTimeout(autoTimer); });
+    ['click', 'touchstart', 'keydown'].forEach(function (ev) {
+      (ev === 'keydown' ? document : bookEl.parentNode).addEventListener(ev, function (e) {
+        if (autoBtn && e.target === autoBtn) return;
+        if (autoOn) scheduleAuto(AUTO_MS * 2);
+      }, { passive: true });
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (inView) scheduleAuto(2500); }, { threshold: 0.45 }).observe(bookEl);
+    } else { inView = true; }
+    paintAuto();
     var st;
     stage.addEventListener('scroll', function () {
       if (!isPhone()) return;

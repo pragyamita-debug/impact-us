@@ -14,16 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <script>
-    // Apply saved theme before paint (avoids a flash of the wrong colours)
-    (function () {
-      try {
-        var p = new URLSearchParams(location.search).get('theme');
-        var t = p || localStorage.getItem('impactus-theme');
-        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
 </head>
 <body>
 
@@ -44,11 +34,6 @@
     </nav>
 
     <div class="nav__right">
-      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
-        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
-        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
-        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
-      </div>
       <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -96,14 +81,11 @@
 
 <!-- ============ CTA BAND ============ -->
 <section class="cta-band">
-  <div class="container cta-band__inner reveal">
-    <div>
-      <h2>Ready to get <span class="hl">discovered</span>?</h2>
-      <p class="muted">Turn your CV into a website, rank on Google and land your first interview. Only 30 spots left for the upcoming cohort.</p>
-    </div>
+  <div class="container cta-band__inner cta-band__inner--path reveal">
+    <svg class="cta-path" viewBox="0 0 120 80" aria-hidden="true"><path d="M14 42c-6 0-10 4-10 10 0 8 10 20 10 20s10-12 10-20c0-6-4-10-10-10z"/><circle cx="14" cy="52" r="3"/><path class="dash" d="M28 56 C 50 50, 50 20, 82 26"/><path d="M90 40V6M90 6h22l-6 7 6 7H90"/></svg>
+    <h2>Discover the path for your CV to <span class="cta-under">recruiter’s desk.</span></h2>
     <div class="cta-band__btns">
-      <a href="apply.html" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
-      <a href="apply.html" class="btn btn--ghost">Go to Application <span class="arrow">→</span></a>
+      <a href="apply.html" class="btn btn--primary btn--lg">Find the Way <span class="arrow">→</span></a>
     </div>
   </div>
 </section>

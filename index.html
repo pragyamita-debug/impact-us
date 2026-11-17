@@ -15,16 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/home.css" />
-  <script>
-    // Apply saved theme before paint (avoids a flash of the wrong colours)
-    (function () {
-      try {
-        var p = new URLSearchParams(location.search).get('theme');
-        var t = p || localStorage.getItem('impactus-theme');
-        if (t === 'midnight' || t === 'lavender' || t === 'sage') document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
 </head>
 <body>
 
@@ -45,11 +35,6 @@
     </nav>
 
     <div class="nav__right">
-      <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
-        <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
-        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Light pink theme" title="Light"></button>
-        <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
-      </div>
       <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">→</span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -79,21 +64,10 @@
         <span class="h-under">Guaranteed!</span>
       </h1>
       <p class="h-hero__sub reveal">Build a powerful digital profile, get expert guidance, and be interview-ready for real opportunities.</p>
-
-      <ul class="h-feats reveal">
-        <li><svg aria-hidden="true"><use href="#i-laptop"/></svg><span>Build Your<br />Profile</span></li>
-        <li><svg aria-hidden="true"><use href="#i-chart"/></svg><span>Grow Your<br />Visibility</span></li>
-        <li><svg aria-hidden="true"><use href="#i-team"/></svg><span>Get Expert<br />Guidance</span></li>
-      </ul>
-
-      <div class="h-hero__cta reveal">
-        <a href="apply.html" class="btn btn--primary">Get My First Interview <span class="arrow">→</span></a>
-        <a href="#book" class="h-link">Open the playbook ↓</a>
-      </div>
     </div>
 
     <div class="h-hero__visual reveal">
-      <img src="assets/img/ref-hero.jpg" alt="A young professional celebrating at her laptop" width="776" height="580" />
+      <img src="assets/img/ref-hero.jpg" alt="Two young friends laughing together over a phone" width="1200" height="900" />
     </div>
   </div>
 </section>
@@ -112,7 +86,7 @@
     <div class="book-head reveal">
       <span class="eyebrow">The ImpactUs Playbook</span>
       <h2>Everything between you and your <span class="hl">first interview.</span></h2>
-      <p class="section__sub">Turn the pages, or jump to a chapter.</p>
+      
     </div>
 
     <nav class="book-tabs reveal" aria-label="Book chapters">
@@ -150,16 +124,14 @@
             <div class="bp-tile"><svg aria-hidden="true"><use href="#i-target"/></svg><b>Boost Your Reach</b><small>Get discovered by recruiters through Google, SEO, and digital marketing.</small></div>
             <div class="bp-tile"><svg aria-hidden="true"><use href="#i-team"/></svg><b>Get Guidance</b><small>1:1 support to sharpen your profile and interview readiness.</small></div>
           </div>
-          <a href="program.html" class="bp-more">Read the full program →</a>
           <span class="bp-num">2</span>
         </article>
 
         <!-- ===== Spread 2 · HOW IT WORKS ===== -->
         <article class="bpage bpage--lead" data-p="3">
-          <span class="bp-eyebrow">A Simple, Guided Journey</span>
+          <span class="bp-eyebrow">A Simple, Guided Journey.</span>
           <h3 class="bp-head">From Your Experience<br />to <span class="hl">Real Opportunities.</span></h3>
           <span class="bp-rule"></span>
-          <p class="bp-text">Five steps. You bring your experience; we turn it into a profile recruiters can find.</p>
           <span class="bp-num">3</span>
         </article>
         <article class="bpage bpage--center" data-p="4">
@@ -170,7 +142,6 @@
             <li><span class="bp-ic"><svg aria-hidden="true"><use href="#i-team"/></svg></span><b>Get<br />Expert Support</b></li>
             <li><span class="bp-ic"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><b>Move Closer<br />to Opportunities</b></li>
           </ol>
-          <a href="how-it-works.html" class="bp-more">See every step →</a>
           <span class="bp-num">4</span>
         </article>
 
@@ -183,10 +154,10 @@
         </article>
         <article class="bpage bpage--center" data-p="6">
           <a href="how-it-works.html?play=1" class="bp-video" aria-label="Play the How It Works walkthrough">
-            <img src="assets/img/ref-video.jpg" alt="An ImpactUs coach explaining the program" width="1002" height="376" />
+            <img src="assets/img/ref-video.jpg" alt="A young professional at a laptop in a meeting" width="1200" height="600" />
+            <span class="bp-video__play" aria-hidden="true">▶</span>
             <span class="bp-video__bar"><span>▶</span><span>🔊</span><span>0:00 / 0:25</span><i></i><span>⛶</span></span>
           </a>
-          <p class="bp-text">Watch a CV become a website, rank on Google, and turn into an interview invite.</p>
           <span class="bp-num">6</span>
         </article>
 
@@ -194,7 +165,6 @@
         <article class="bpage bpage--lead" data-p="7">
           <span class="bp-eyebrow">Real People. Real Progress.</span>
           <h3 class="bp-head bp-head--xl">Profiles That<br /><span class="hl h-under h-under--gold">Got Noticed.</span></h3>
-          <p class="bp-text">Same skills as everyone else. The difference? Recruiters could find them.</p>
           <span class="bp-num">7</span>
         </article>
         <article class="bpage bpage--center" data-p="8">
@@ -203,7 +173,6 @@
             <a href="success-stories.html" class="bp-person"><img src="assets/img/ref-sandra.jpg" alt="Sandra" /><b>Sandra</b><small>Got noticed by global companies and secured an interview.</small></a>
             <a href="success-stories.html" class="bp-person"><img src="assets/img/ref-kabir.jpg" alt="Kabir" /><b>Kabir</b><small>Built a strong digital profile and opened doors to international opportunities.</small></a>
           </div>
-          <a href="success-stories.html" class="bp-more">Read their stories →</a>
           <span class="bp-num">8</span>
         </article>
 
@@ -216,14 +185,12 @@
             <details><summary>What does my digital profile include?</summary><p>A professional personal website built from your CV: about, skills, projects and proof of work, linked with your LinkedIn.</p></details>
             <details><summary>What kind of support will I get?</summary><p>1:1 expert guidance: profile reviews, outreach strategy and interview preparation.</p></details>
           </div>
-          <a href="faq.html" class="bp-more">All questions →</a>
           <span class="bp-num">9</span>
         </article>
         <article class="bpage bpage--apply" data-p="10">
           <svg class="bp-path" viewBox="0 0 120 80" aria-hidden="true"><path d="M14 42c-6 0-10 4-10 10 0 8 10 20 10 20s10-12 10-20c0-6-4-10-10-10z"/><circle cx="14" cy="52" r="3"/><path class="dash" d="M28 56 C 50 50, 50 20, 82 26"/><path d="M90 40V6M90 6h22l-6 7 6 7H90"/></svg>
-          <h3 class="bp-head">Discover the path<br />for your CV to<br /><span class="hl h-under">recruiter’s desk.</span></h3>
-          <p class="bp-text">Only <strong>30 spots</strong> in the upcoming cohort.</p>
-          <a href="apply.html" class="btn btn--primary btn--lg">Apply Now <span class="arrow">→</span></a>
+          <h3 class="bp-head">Discover the path<br />for your CV to<br /><span class="hl h-under h-under--gold">recruiter’s desk.</span></h3>
+          <a href="apply.html" class="btn btn--primary btn--lg">Find the Way <span class="arrow">→</span></a>
           <span class="bp-num">10</span>
         </article>
 
@@ -242,20 +209,19 @@
       <button class="car-btn" id="bookPrev" aria-label="Previous page">←</button>
       <span class="book-ctrl__count" id="bookCount" aria-live="polite">Cover</span>
       <button class="car-btn" id="bookNext" aria-label="Next page">→</button>
+      <button class="car-btn book-ctrl__auto" id="bookAuto" aria-label="Stop automatic page turning">❚❚</button>
     </div>
+    <p class="book-hint">Click or tap a page to turn it · pages also turn on their own</p>
   </div>
 </section>
 
 <!-- ============ CTA BAND ============ -->
 <section class="cta-band">
-  <div class="container cta-band__inner reveal">
-    <div>
-      <h2>Ready to be <span class="hl">found</span>?</h2>
-      <p class="muted">Your profile, your Google visibility, your expert, your first interview. Only 30 spots left for the upcoming cohort.</p>
-    </div>
+  <div class="container cta-band__inner cta-band__inner--path reveal">
+    <svg class="cta-path" viewBox="0 0 120 80" aria-hidden="true"><path d="M14 42c-6 0-10 4-10 10 0 8 10 20 10 20s10-12 10-20c0-6-4-10-10-10z"/><circle cx="14" cy="52" r="3"/><path class="dash" d="M28 56 C 50 50, 50 20, 82 26"/><path d="M90 40V6M90 6h22l-6 7 6 7H90"/></svg>
+    <h2>Discover the path for your CV to <span class="cta-under">recruiter’s desk.</span></h2>
     <div class="cta-band__btns">
-      <a href="apply.html" class="btn btn--primary">Apply Now <span class="arrow">→</span></a>
-      <a href="program.html" class="btn btn--ghost">Explore the Program</a>
+      <a href="apply.html" class="btn btn--primary btn--lg">Find the Way <span class="arrow">→</span></a>
     </div>
   </div>
 </section>

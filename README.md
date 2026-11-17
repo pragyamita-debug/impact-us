@@ -17,13 +17,8 @@ Plain HTML / CSS / JS — no build step.
 
 Every page shares `css/styles.css` and `js/main.js`, and ends with a "next page" call-to-action band. When editing the menu or footer, change it on all 7 pages.
 
-## Three colour themes
-Switch with the three dots in the navbar. The choice is remembered and carried to every page you open (also added to links as `?theme=`). Or set it by URL:
-- `index.html?theme=midnight` — dark + orange
-- `index.html?theme=lavender` — **default** light theme: soft pink + magenta + deep navy
-- `index.html?theme=sage` — cream + green/amber
-
-The default is set by `data-theme="lavender"` on the `<html>` tag in each page. Colours live at the top of `css/styles.css`.
+## Colours
+One light theme: soft pink background, magenta accents, deep navy headings. The colour tokens are at the top of `css/styles.css` (`:root`).
 
 ## Things to plug in
 1. **Application form** — in `js/main.js`, set `FORM_ENDPOINT` to a Formspree / Google Apps Script URL to receive submissions. Until then the form validates and shows a thank-you message, but nothing is sent.
@@ -32,3 +27,11 @@ The default is set by `data-theme="lavender"` on the `<html>` tag in each page. 
 
 ## Run / publish
 Open `index.html` in a browser. To publish: GitHub → Settings → Pages → Deploy from branch → `main` / root.
+
+## Photo credits
+Home page photos (`assets/img/ref-*.jpg`) are free photos from Unsplash (Unsplash License):
+- Hero: https://unsplash.com/photos/Y4zNMW3pQAs
+- Video cover: https://unsplash.com/photos/gxat5nfmNRc
+- Smith: https://unsplash.com/photos/TTOSniPxVmY
+- Sandra: https://unsplash.com/photos/DmGzwwuLPG8
+- Kabir: https://unsplash.com/photos/xbQpVuU3Y-c
