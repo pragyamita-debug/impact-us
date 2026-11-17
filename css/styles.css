@@ -34,32 +34,33 @@
   color-scheme: dark;
 }
 
+/* "Lavender" slot = the light theme (default). Pink + deep navy, from the brand reference. */
 [data-theme="lavender"] {
-  --bg: #faf7ff;
-  --bg-2: #f2ecff;
+  --bg: #fff6fa;
+  --bg-2: #fdebf3;
   --surface: #ffffff;
-  --surface-2: #f6f2ff;
-  --text: #17132a;
-  --muted: #5d5873;
-  --line: #e6def8;
-  --accent: #f26b0f;
-  --accent-hover: #e05f05;
+  --surface-2: #fff3f8;
+  --text: #1f1452;
+  --muted: #5a5378;
+  --line: #f6d5e5;
+  --accent: #e6157a;
+  --accent-hover: #c90f68;
   --accent-ink: #ffffff;
-  --accent-soft: #fff0e4;
-  --b: #7b4dff;
-  --b-soft: #efe8ff;
-  --hl: #f26b0f;
-  --hl2: #f26b0f;
-  --neg: #c81e1e;
-  --glow: rgba(123, 77, 255, 0.22);
-  --shadow: 0 18px 44px rgba(76, 46, 160, 0.12);
-  --card-border: #e6def8;
-  --nav-bg: rgba(250, 247, 255, 0.8);
-  --footer-bg: #1d1238;
-  --footer-text: #d9d0f5;
-  --screen-bg: #f3eeff;
-  --wash-1: rgba(160, 120, 255, 0.22);
-  --wash-2: rgba(255, 160, 100, 0.14);
+  --accent-soft: #ffe4f0;
+  --b: #e6157a;
+  --b-soft: #ffe4f0;
+  --hl: #e6157a;
+  --hl2: #e6157a;
+  --neg: #c81e4a;
+  --glow: rgba(230, 21, 122, 0.25);
+  --shadow: 0 18px 44px rgba(150, 20, 90, 0.10);
+  --card-border: #f6d5e5;
+  --nav-bg: rgba(255, 246, 250, 0.85);
+  --footer-bg: #1f1452;
+  --footer-text: #e6def8;
+  --screen-bg: #fff0f6;
+  --wash-1: rgba(240, 90, 170, 0.20);
+  --wash-2: rgba(170, 110, 255, 0.10);
   color-scheme: light;
 }
 
@@ -178,7 +179,7 @@ p { margin: 0; }
 .swatch:hover { transform: scale(1.12); }
 .swatch[aria-checked="true"] { border-color: var(--text); }
 .swatch--midnight { background: conic-gradient(#0b0b0e 0 50%, #f26b0f 0); }
-.swatch--lavender { background: conic-gradient(#b9a2ff 0 50%, #f26b0f 0); }
+.swatch--lavender { background: conic-gradient(#1f1452 0 50%, #e6157a 0); }
 .swatch--sage { background: conic-gradient(#3d7a36 0 50%, #e0a020 0); }
 
 .burger { display: none; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 10px; background: transparent; padding: 10px 9px; flex-direction: column; justify-content: space-between; }

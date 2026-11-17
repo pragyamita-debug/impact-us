@@ -7,7 +7,7 @@ Plain HTML / CSS / JS — no build step.
 ## Pages (each nav tab opens its own page)
 | Nav tab | File | Content |
 |---|---|---|
-| Home | `index.html` | Hero, 264 million problem band, How It Works video, single-line auto-moving Explore carousel linking to every page |
+| Home | `index.html` | Clean hero, "search your name" hook, and the **ImpactUs Playbook**: a flip-book (problem, program, how it works, video, stories, Google proof, FAQ, apply). Home-only styles in `css/home.css`; flip logic in `js/main.js` |
 | Program | `program.html` | 3-step path, proof / visibility / outreach deep-dives, Starter vs Premium |
 | Success Stories | `success-stories.html` | Smith, Sandra, Kabir cards (click → story popup), Proof + Visibility + Network |
 | How It Works | `how-it-works.html` | Animated 25-sec walkthrough player synced to 5 steps (`?play=1` autoplays) |
@@ -20,10 +20,10 @@ Every page shares `css/styles.css` and `js/main.js`, and ends with a "next page"
 ## Three colour themes
 Switch with the three dots in the navbar. The choice is remembered and carried to every page you open (also added to links as `?theme=`). Or set it by URL:
 - `index.html?theme=midnight` — dark + orange
-- `index.html?theme=lavender` — light lavender + orange/purple
+- `index.html?theme=lavender` — **default** light theme: soft pink + magenta + deep navy
 - `index.html?theme=sage` — cream + green/amber
 
-To fix one theme as the default, change `data-theme="midnight"` on the `<html>` tag in each page. Colours live at the top of `css/styles.css`.
+The default is set by `data-theme="lavender"` on the `<html>` tag in each page. Colours live at the top of `css/styles.css`.
 
 ## Things to plug in
 1. **Application form** — in `js/main.js`, set `FORM_ENDPOINT` to a Formspree / Google Apps Script URL to receive submissions. Until then the form validates and shows a thank-you message, but nothing is sent.

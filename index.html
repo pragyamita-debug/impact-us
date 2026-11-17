@@ -1,19 +1,20 @@
 <!doctype html>
-<html lang="en" data-theme="midnight">
+<html lang="en" data-theme="lavender">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ImpactUs — Turn Your CV Into a Website & Land Your First Interview</title>
-  <meta name="description" content="ImpactUs turns your CV into a discoverable personal website, ranks it on Google with SEO and digital marketing, and gives you expert guidance until you land your first interview. Guaranteed." />
-  <meta property="og:title" content="ImpactUs — Get discovered. Get chosen." />
-  <meta property="og:description" content="Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. Guaranteed." />
+  <title>ImpactUs — From Invisible to Interviewed. Guaranteed.</title>
+  <meta name="description" content="Recruiters search before they call. ImpactUs turns your CV into a personal website that ranks on Google, gives you 1:1 expert guidance, and gets you your first interview. Guaranteed." />
+  <meta property="og:title" content="ImpactUs — From Invisible to Interviewed. Guaranteed." />
+  <meta property="og:description" content="Search your name on Google. What does a recruiter find? Let's change that, and get you your first interview." />
   <meta property="og:image" content="assets/img/logo.png" />
-  <meta name="theme-color" content="#0b0b0e" />
+  <meta name="theme-color" content="#fff6fa" />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/home.css" />
   <script>
     // Apply saved theme before paint (avoids a flash of the wrong colours)
     (function () {
@@ -47,10 +48,10 @@
     <div class="nav__right">
       <div class="theme-switch" role="radiogroup" aria-label="Colour theme">
         <button class="swatch swatch--midnight" data-set-theme="midnight" role="radio" aria-label="Midnight orange theme" title="Midnight"></button>
-        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Lavender theme" title="Lavender"></button>
+        <button class="swatch swatch--lavender" data-set-theme="lavender" role="radio" aria-label="Light pink theme" title="Light"></button>
         <button class="swatch swatch--sage" data-set-theme="sage" role="radio" aria-label="Sage green theme" title="Sage"></button>
       </div>
-      <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">↗</span></a>
+      <a href="apply.html" class="btn btn--primary btn--sm">Apply Now <span class="arrow">→</span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -59,207 +60,217 @@
 
 <main class="page page--home">
 
-<!-- ============ 1. HOME / HERO ============ -->
-<section class="hero" id="home">
-  <div class="hero__glow" aria-hidden="true"></div>
-  <div class="container hero__grid">
-    <div class="hero__copy">
-      <span class="eyebrow reveal">CV → Website → Google → Interview</span>
-      <h1 class="hero__title reveal">
-        You have the skills.<br />
-        But can the <span class="hl">world notice&nbsp;it</span>?
+<!-- ============ HERO: clean & direct ============ -->
+<section class="h-hero">
+  <div class="container h-hero__grid">
+    <div class="h-hero__copy">
+      <h1 class="h-hero__title reveal">
+        From Invisible<br />to Interviewed.<br />
+        <span class="h-under">Guaranteed.</span>
       </h1>
-      <p class="hero__sub reveal">Turn your CV into a discoverable personal website, get expert guidance, and land your first interview. <strong>Guaranteed.</strong></p>
-      <div class="hero__cta reveal">
-        <a href="apply.html" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
-        <a href="#how" class="btn btn--ghost" data-play>
-          <span class="play-dot" aria-hidden="true">▶</span> Watch 2-Min Overview
-        </a>
+      <p class="h-hero__sub reveal">Recruiters Google you before they call. Build a digital profile they can find, get 1:1 expert guidance, and walk into your first interview.</p>
+
+      <div class="h-hero__cta reveal">
+        <a href="apply.html" class="btn btn--primary">Get My First Interview <span class="arrow">→</span></a>
+        <a href="#book" class="h-link">Open the playbook ↓</a>
       </div>
-      <ul class="ticks reveal">
-        <li>CV → Personal Website</li>
-        <li>Expert Guidance</li>
-        <li>Rank on Google</li>
-        <li>First Interview Guaranteed</li>
+
+      <ul class="h-feats reveal">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+          <span>Build Your<br />Profile</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V14M9 20V10M14 20V7M19 20V4"/></svg>
+          <span>Grow Your<br />Visibility</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="9" r="2.2"/><circle cx="19" cy="9" r="2.2"/><path d="M6.5 20a5.5 5.5 0 0 1 11 0M1.5 18a3.5 3.5 0 0 1 5-3M22.5 18a3.5 3.5 0 0 0-5-3"/></svg>
+          <span>Get Expert<br />Guidance</span>
+        </li>
       </ul>
     </div>
 
-    <div class="hero__visual reveal">
-      <div class="hero__photo">
-        <img src="assets/img/hero-crowd.jpg" alt="A crowd of students, two of them glowing and standing out" />
+    <div class="h-hero__visual reveal">
+      <div class="h-hero__photo">
+        <img src="assets/img/hero-crowd.jpg" alt="A crowd of graduates; two of them glow and stand out" />
       </div>
-      <!-- floating CV website card -->
-      <div class="float-card float-card--site">
-        <div class="browser-dots"><i></i><i></i><i></i><span>kabirahmed.com</span></div>
-        <div class="float-card__body">
-          <img src="assets/img/kabir.jpg" alt="" />
-          <div>
-            <b>Kabir Ahmed</b>
-            <small>Digital Marketer</small>
-            <div class="skel"><i></i><i></i></div>
-          </div>
-        </div>
+      <div class="h-hero__chip">
+        <span class="h-dot"></span>
+        <div><b>Interview invite</b><small>“We found your profile on Google…”</small></div>
       </div>
-      <div class="float-card float-card--rank">
-        <span class="rank-badge">#1</span>
-        <div><b>on Google</b><small>“kabir digital marketer”</small></div>
-      </div>
-      <div class="float-card float-card--invite">
-        <span class="check">✓</span>
-        <div><b>Interview invite</b><small>Thu · 11:00 AM</small></div>
-      </div>
+      <svg class="h-swoosh" viewBox="0 0 200 200" aria-hidden="true"><path d="M10 190 C 80 170, 160 120, 190 10"/></svg>
     </div>
   </div>
 </section>
 
-<!-- ============ PROBLEM (from deck slides 2–4) ============ -->
-<section class="problem section--alt">
-  <div class="container problem__grid">
-    <div class="problem__stat reveal">
-      <p class="problem__lead">The right opportunity might <span class="neg">never find you.</span></p>
-      <div class="big-number"><span data-count="264">0</span> million</div>
-      <p class="muted">Students enrolled in higher education worldwide in 2025 <strong>as per UNESCO</strong></p>
-    </div>
-    <div class="problem__cards">
-      <div class="pcard reveal">
-        <p>Your degree makes you eligible.</p>
-        <p class="pcard__strong">But it doesn’t <span class="hl">guarantee the spot.</span></p>
-      </div>
-      <div class="pcard reveal">
-        <p>So how can you get</p>
-        <p class="pcard__strong"><span class="hl">seen</span>, <span class="hl">valued</span> &amp; <span class="hl">chosen</span>?</p>
-      </div>
-    </div>
+<!-- ============ CURIOSITY STRIP ============ -->
+<section class="h-hook">
+  <div class="container h-hook__inner reveal">
+    <p>Try this: search your own name on Google.</p>
+    <p class="h-hook__q">Would a recruiter find <span class="hl">you</span>, or someone else?</p>
   </div>
 </section>
 
-
-<!-- ============ 4. HOW IT WORKS ============ -->
-<section class="section" id="how">
+<!-- ============ THE BOOK ============ -->
+<section class="book-sec" id="book">
   <div class="container">
-    <div class="section__head">
-      <span class="eyebrow reveal">How it works</span>
-      <h2 class="reveal">See How It <span class="hl2">Actually Works.</span></h2>
-      <p class="section__sub reveal">A short walkthrough of how we turn your CV into a high-visibility personal website and get it discovered on Google.</p>
+    <div class="book-head reveal">
+      <span class="eyebrow">The ImpactUs Playbook</span>
+      <h2>Five chapters between you<br />and your <span class="hl">first interview.</span></h2>
+      <p class="section__sub">Turn the pages, or jump to a chapter.</p>
     </div>
 
-    <div class="how">
-      <div class="player reveal" id="player">
-        <div class="screen" id="screen">
-          <!-- Scene 1: CV → Website -->
-          <div class="scene" data-scene="0">
-            <div class="cv">
-              <div class="cv__head"><span class="cv__ph"></span><div><b>CURRICULUM VITAE</b><i></i></div></div>
-              <i></i><i></i><i class="s"></i><i></i><i class="s"></i><i></i>
-            </div>
-            <div class="morph-arrow">➜</div>
-            <div class="site">
-              <div class="browser-dots"><i></i><i></i><i></i><span>kabirahmed.com</span></div>
-              <div class="site__body">
-                <div class="site__nav"><i></i><i></i><i></i><i></i></div>
-                <div class="site__hero">
-                  <div><small>Hi, I’m Kabir</small><b>Digital Marketer</b><span class="site__btn">View my work</span></div>
-                  <img src="assets/img/kabir.jpg" alt="" />
-                </div>
-                <div class="site__cards"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-          </div>
-          <!-- Scene 2: SEO -->
-          <div class="scene" data-scene="1">
-            <div class="seo">
-              <div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="ring__bg"/><circle cx="60" cy="60" r="50" class="ring__fg"/></svg><div class="ring__val"><b data-ring>0</b><small>SEO score</small></div></div>
-              <div class="chips">
-                <span>Meta titles</span><span>Keywords</span><span>Schema</span><span>Backlinks</span><span>Page speed 98</span><span>LinkedIn sync</span><span>Content plan</span><span>Mobile-ready</span>
-              </div>
-            </div>
-          </div>
-          <!-- Scene 3: Google -->
-          <div class="scene" data-scene="2">
-            <div class="serp">
-              <div class="serp__logo"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></div>
-              <div class="serp__box"><span data-type="kabir digital marketer portfolio"></span><i class="caret"></i></div>
-              <div class="serp__res">
-                <span class="serp__one">#1</span>
-                <small>kabirahmed.com</small>
-                <b>Kabir – Digital Marketer | Portfolio</b>
-                <p>Digital marketer with expertise in SEO, content and growth marketing.</p>
-              </div>
-              <div class="serp__res serp__res--dim"><i></i><i></i></div>
-            </div>
-          </div>
-          <!-- Scene 4: Traffic -->
-          <div class="scene" data-scene="3">
-            <div class="traffic">
-              <div class="traffic__stats">
-                <div><b data-num="1240">0</b><small>Profile views</small></div>
-                <div><b data-num="86">0</b><small>Recruiter visits</small></div>
-                <div><b data-num="14">0</b><small>Client enquiries</small></div>
-              </div>
-              <svg class="traffic__chart" viewBox="0 0 400 140" preserveAspectRatio="none">
-                <path class="area" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12 L400 140 L0 140Z"/>
-                <path class="line" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12"/>
-              </svg>
-              <div class="visitors"><span>🏢 Employer</span><span>💼 Client</span><span>🧑‍💼 Recruiter</span></div>
-            </div>
-          </div>
-          <!-- Scene 5: Interview -->
-          <div class="scene" data-scene="4">
-            <div class="invite">
-              <div class="invite__card">
-                <div class="invite__top"><span class="check">✓</span><div><b>Interview invitation</b><small>From: Hiring Team</small></div></div>
-                <p>Hi Kabir, we came across your portfolio on Google and would love to talk about the Digital Marketing role.</p>
-                <div class="invite__when">📅 Thursday · 11:00 AM</div>
-              </div>
-              <div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-          </div>
+    <nav class="book-tabs reveal" aria-label="Book chapters">
+      <button data-goto="1">01 · The Problem</button>
+      <button data-goto="2">02 · Program</button>
+      <button data-goto="3">03 · How It Works</button>
+      <button data-goto="5">04 · Success Stories</button>
+      <button data-goto="7">05 · FAQ</button>
+      <button data-goto="8" class="is-hot">Apply</button>
+    </nav>
 
-          <div class="caption" id="caption">We build your personal website</div>
-          <button class="big-play" id="bigPlay" aria-label="Play walkthrough">▶</button>
-        </div>
-        <div class="controls">
-          <button class="ctrl" id="playBtn" aria-label="Play">▶</button>
-          <div class="bar" id="bar"><div class="bar__fill" id="barFill"></div><div class="bar__marks"><i></i><i></i><i></i><i></i></div></div>
-          <span class="time" id="time">0:00 / 0:25</span>
-        </div>
+    <div class="book reveal" id="bookEl">
+      <div class="book__stage" id="bookStage">
+
+        <!-- p0 · FRONT COVER -->
+        <article class="bpage bpage--cover" data-p="0">
+          <img src="assets/img/logo-mark.png" alt="" class="cover__mark" />
+          <p class="cover__kicker">The ImpactUs Playbook</p>
+          <h3 class="cover__title">How to go from<br /><em>invisible</em> to<br /><span>interviewed.</span></h3>
+          <p class="cover__sub">5 chapters · 2-minute read</p>
+          <button class="cover__open" data-next>Open the book →</button>
+        </article>
+
+        <!-- p1 · CH 1 THE PROBLEM -->
+        <article class="bpage" data-p="1">
+          <span class="bp-ch">Chapter 01 · The Problem</span>
+          <h3 class="bp-title">Your degree gets you in line.<br /><span class="hl">It doesn’t get you seen.</span></h3>
+          <div class="bp-stat"><b data-count="264">264</b><span>million<br />students in higher education <small>(UNESCO, 2025)</small></span></div>
+          <p class="bp-text">They all have a CV. Most of those CVs sit in an inbox nobody opens. Recruiters don’t scroll piles anymore. <strong>They search.</strong></p>
+          <p class="bp-text bp-q">So when someone types your name and role into Google… what comes up?</p>
+          <span class="bp-num">1</span>
+        </article>
+
+        <!-- p2 · CH 2 THE PROGRAM -->
+        <article class="bpage" data-p="2">
+          <span class="bp-ch">Chapter 02 · The Program</span>
+          <h3 class="bp-title">A focused journey to <span class="hl">get you interviewed.</span></h3>
+          <div class="bp-cards">
+            <div class="bp-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+              <b>Build Your Profile</b><small>A professional website that represents you.</small>
+            </div>
+            <div class="bp-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 12l7-7M16 5h3v3"/></svg>
+              <b>Boost Your Reach</b><small>Found by recruiters through Google, SEO &amp; digital marketing.</small>
+            </div>
+            <div class="bp-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M6.5 20a5.5 5.5 0 0 1 11 0"/></svg>
+              <b>Get Guidance</b><small>1:1 support to sharpen your profile and interview readiness.</small>
+            </div>
+          </div>
+          <a href="program.html" class="bp-more">Read the full program →</a>
+          <span class="bp-num">2</span>
+        </article>
+
+        <!-- p3 · CH 3 HOW IT WORKS -->
+        <article class="bpage" data-p="3">
+          <span class="bp-ch">Chapter 03 · How It Works</span>
+          <h3 class="bp-title">From your experience to <span class="hl">real opportunities.</span></h3>
+          <ol class="bp-steps">
+            <li><span>1</span><div><b>Share your details</b><small>Your CV, your goals, the roles you want.</small></div></li>
+            <li><span>2</span><div><b>Get your digital profile</b><small>Your CV becomes a personal website.</small></div></li>
+            <li><span>3</span><div><b>Be discoverable</b><small>SEO puts you on page one for your name &amp; role.</small></div></li>
+            <li><span>4</span><div><b>Get expert support</b><small>1:1 coaching, outreach and interview prep.</small></div></li>
+            <li><span>5</span><div><b>Move closer to opportunities</b><small>Until your first interview is booked.</small></div></li>
+          </ol>
+          <span class="bp-num">3</span>
+        </article>
+
+        <!-- p4 · SEE IT IN ACTION -->
+        <article class="bpage" data-p="4">
+          <span class="bp-ch">See it in action</span>
+          <h3 class="bp-title">Watch a CV become<br /><span class="hl">a #1 Google result.</span></h3>
+          <a href="how-it-works.html?play=1" class="bp-video" aria-label="Play the 25-second walkthrough">
+            <img src="assets/img/kabir.jpg" alt="" />
+            <span class="bp-video__play">▶</span>
+            <span class="bp-video__bar"><i></i><em>0:00 / 0:25</em></span>
+          </a>
+          <p class="bp-text">25 seconds. Website → SEO → Google → interview invite.</p>
+          <span class="bp-num">4</span>
+        </article>
+
+        <!-- p5 · CH 4 SUCCESS STORIES -->
+        <article class="bpage" data-p="5">
+          <span class="bp-ch">Chapter 04 · Real People. Real Progress.</span>
+          <h3 class="bp-title">Same skills. <span class="hl">Different outcomes.</span></h3>
+          <div class="bp-people">
+            <a href="success-stories.html" class="bp-person"><img src="assets/img/smith.jpg" alt="Smith" /><div><b>Smith</b><small>Applied to 1,000+ jobs. Silence. Until he became searchable.</small></div></a>
+            <a href="success-stories.html" class="bp-person"><img src="assets/img/sandra.jpg" alt="Sandra" /><div><b>Sandra</b><small>Followed up with everyone. Nobody could find her work online.</small></div></a>
+            <a href="success-stories.html" class="bp-person"><img src="assets/img/kabir.jpg" alt="Kabir" /><div><b>Kabir</b><small>Stopped chasing. Started getting found. Landed the interview.</small></div></a>
+          </div>
+          <span class="bp-num">5</span>
+        </article>
+
+        <!-- p6 · THE PROOF (Google mock) -->
+        <article class="bpage" data-p="6">
+          <span class="bp-ch">What changed for Kabir?</span>
+          <h3 class="bp-title">One search. <span class="hl">One result that mattered.</span></h3>
+          <div class="bp-serp">
+            <div class="bp-serp__bar">🔍 kabir digital marketer</div>
+            <div class="bp-serp__res">
+              <span class="bp-serp__one">#1</span>
+              <small>kabirahmed.com</small>
+              <b>Kabir – Digital Marketer | Portfolio</b>
+              <p>SEO, content and growth marketing. View projects &amp; results.</p>
+            </div>
+            <div class="bp-serp__res bp-serp__res--dim"><i></i><i></i></div>
+          </div>
+          <div class="bp-mail"><span>✓</span><div><b>Interview invitation</b><small>“We came across your portfolio on Google…”</small></div></div>
+          <span class="bp-num">6</span>
+        </article>
+
+        <!-- p7 · CH 5 FAQ -->
+        <article class="bpage" data-p="7">
+          <span class="bp-ch">Chapter 05 · Questions</span>
+          <h3 class="bp-title">Frequently asked <span class="hl">questions.</span></h3>
+          <div class="bp-faq">
+            <details><summary>Do you guarantee an interview?</summary><p>Yes. We work with you on profile, visibility and outreach until your first interview is booked.</p></details>
+            <details><summary>How is my profile discovered by recruiters?</summary><p>Your website is optimised for Google (SEO) and promoted through digital marketing, so you show up when recruiters search your name and role.</p></details>
+            <details><summary>What does my digital profile include?</summary><p>A professional personal website built from your CV: about, skills, projects and proof of work, linked with your LinkedIn.</p></details>
+            <details><summary>What kind of support will I get?</summary><p>1:1 expert guidance: profile reviews, outreach strategy and interview preparation.</p></details>
+          </div>
+          <a href="faq.html" class="bp-more">All questions →</a>
+          <span class="bp-num">7</span>
+        </article>
+
+        <!-- p8 · YOUR CHAPTER / APPLY -->
+        <article class="bpage bpage--apply" data-p="8">
+          <span class="bp-ch">Your chapter starts here</span>
+          <svg class="bp-path" viewBox="0 0 120 60" aria-hidden="true"><path d="M8 50 C 30 10, 60 60, 90 20" /><circle cx="8" cy="50" r="5"/><path d="M96 4v24M96 4h18l-5 6 5 6H96"/></svg>
+          <h3 class="bp-title">Discover the path for your CV to the <span class="h-under">recruiter’s desk.</span></h3>
+          <p class="bp-text">Only <strong>30 spots</strong> in the upcoming cohort.</p>
+          <a href="apply.html" class="btn btn--primary">Apply Now <span class="arrow">→</span></a>
+          <span class="bp-num">8</span>
+        </article>
+
+        <!-- p9 · BACK COVER -->
+        <article class="bpage bpage--cover bpage--back-cover" data-p="9">
+          <p class="cover__kicker">The end?</p>
+          <h3 class="cover__title">Not quite.<br /><span>Your first interview</span><br />is page one.</h3>
+          <a href="apply.html" class="cover__open">Write it with us →</a>
+          <button class="cover__restart" data-goto="0">↺ Read again</button>
+        </article>
+
       </div>
+    </div>
 
-      <ol class="steps" id="steps">
-        <li data-step="0"><span>1</span><div><b>We build your personal website</b><small>Your CV becomes a professional portfolio site.</small></div></li>
-        <li data-step="1"><span>2</span><div><b>Optimize it with SEO &amp; digital marketing</b><small>Your expert tunes keywords, content and links.</small></div></li>
-        <li data-step="2"><span>3</span><div><b>Get it ranked on Google</b><small>Search your name + role — you show up first.</small></div></li>
-        <li data-step="3"><span>4</span><div><b>Drive the right traffic</b><small>Employers &amp; clients find and visit you.</small></div></li>
-        <li data-step="4"><span>5</span><div><b>Land your first interview. Guaranteed.</b><small>Outreach + coaching until the call is booked.</small></div></li>
-      </ol>
+    <div class="book-ctrl">
+      <button class="car-btn" id="bookPrev" aria-label="Previous page">←</button>
+      <span class="book-ctrl__count" id="bookCount" aria-live="polite">Cover</span>
+      <button class="car-btn" id="bookNext" aria-label="Next page">→</button>
     </div>
-    <p class="how__more reveal"><a href="how-it-works.html" class="btn btn--ghost">Open the full How It Works page <span class="arrow">→</span></a></p>
-  </div>
-</section>
-
-<!-- ============ EXPLORE (single-line auto carousel) ============ -->
-<section class="section section--alt explore-sec">
-  <div class="container">
-    <div class="section__head">
-      <span class="eyebrow reveal">Explore ImpactUs</span>
-      <h2 class="reveal">One path. <span class="hl">All 3 advantages unlocked.</span></h2>
-      <p class="section__sub reveal">Proof + Visibility + Network. Pick where you want to start.</p>
-    </div>
-  </div>
-  <div class="carousel reveal" id="carousel" aria-roledescription="carousel" aria-label="Explore ImpactUs pages">
-    <div class="carousel__track" id="carTrack">
-        <a href="program.html" class="xcard"><span class="xcard__n">01</span><h3>Program</h3><p>Build your profile, grow your network, land your first interview.</p><span class="xcard__go">Open →</span></a>
-        <a href="success-stories.html" class="xcard"><span class="xcard__n">02</span><h3>Success Stories</h3><p>Smith, Sandra and Kabir — same skills, different outcomes.</p><span class="xcard__go">Open →</span></a>
-        <a href="how-it-works.html" class="xcard"><span class="xcard__n">03</span><h3>How It Works</h3><p>Watch your CV become a website that ranks on Google.</p><span class="xcard__go">Open →</span></a>
-        <a href="about.html" class="xcard"><span class="xcard__n">04</span><h3>About</h3><p>Our mission to get talent discovered and trusted.</p><span class="xcard__go">Open →</span></a>
-        <a href="faq.html" class="xcard"><span class="xcard__n">05</span><h3>FAQ</h3><p>The interview guarantee, Google ranking, expert guidance.</p><span class="xcard__go">Open →</span></a>
-        <a href="apply.html" class="xcard xcard--hot"><span class="xcard__n">06</span><h3>Apply Now</h3><p>Only 30 spots left for our upcoming cohort.</p><span class="xcard__go">Apply ↗</span></a>
-    </div>
-  </div>
-  <div class="carousel__nav">
-    <button class="car-btn" id="carPrev" aria-label="Previous">←</button>
-    <div class="car-dots" id="carDots"></div>
-    <button class="car-btn" id="carNext" aria-label="Next">→</button>
   </div>
 </section>
 
@@ -267,12 +278,12 @@
 <section class="cta-band">
   <div class="container cta-band__inner reveal">
     <div>
-      <h2>Ready to get <span class="hl">discovered</span>?</h2>
-      <p class="muted">Turn your CV into a website, rank on Google and land your first interview. Only 30 spots left for the upcoming cohort.</p>
+      <h2>Ready to be <span class="hl">found</span>?</h2>
+      <p class="muted">Your website, your Google ranking, your expert, your first interview. Only 30 spots left for the upcoming cohort.</p>
     </div>
     <div class="cta-band__btns">
-      <a href="apply.html" class="btn btn--primary">Join the Next Cohort <span class="arrow">↗</span></a>
-      <a href="program.html" class="btn btn--ghost">Explore the Program <span class="arrow">→</span></a>
+      <a href="apply.html" class="btn btn--primary">Apply Now <span class="arrow">→</span></a>
+      <a href="program.html" class="btn btn--ghost">Explore the Program</a>
     </div>
   </div>
 </section>

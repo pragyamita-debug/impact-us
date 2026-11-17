@@ -63,7 +63,7 @@
   }
 
   /* ---------- theme switcher (kept across pages) ---------- */
-  var themeColors = { midnight: '#0b0b0e', lavender: '#faf7ff', sage: '#fbf8f0' };
+  var themeColors = { midnight: '#0b0b0e', lavender: '#fff6fa', sage: '#fbf8f0' };
   function carryTheme(t) {
     // add ?theme=… to every internal page link, so the theme follows you even where storage is blocked
     $$('a[href$=".html"], a[href*=".html?"]').forEach(function (a) {
@@ -83,7 +83,7 @@
     if (save) { try { localStorage.setItem('impactus-theme', t); } catch (e) {} }
     carryTheme(t);
   }
-  setTheme(root.getAttribute('data-theme') || 'midnight', false);
+  setTheme(root.getAttribute('data-theme') || 'lavender', false);
   $$('[data-set-theme]').forEach(function (b) {
     b.addEventListener('click', function () {
       setTheme(b.dataset.setTheme, true);
@@ -338,6 +338,107 @@
         .then(function (r) { if (!r.ok) throw new Error(r.status); done(); })
         .catch(function () { btn.disabled = false; msg.className = 'form__msg err'; msg.textContent = 'Something went wrong. Please try again.'; });
     });
+  }
+
+  /* ---------- flip-book (Home) ----------
+     Pages are written flat in the HTML (.bpage, in reading order).
+     Here they are paired into leaves: leaf i = page 2i (front) + page 2i+1 (back).
+     Desktop: leaves turn in 3D. Phones (<=820px): CSS turns it into swipeable pages. */
+  var bookEl = $('#bookEl'), stage = $('#bookStage');
+  if (bookEl && stage) {
+    var pages = $$('.bpage', stage), leaves = [];
+    for (var i = 0; i < pages.length; i += 2) {
+      var leaf = document.createElement('div'); leaf.className = 'leaf';
+      stage.appendChild(leaf);
+      leaf.appendChild(pages[i]);
+      if (pages[i + 1]) { pages[i + 1].classList.add('bpage--back'); leaf.appendChild(pages[i + 1]); }
+      leaves.push(leaf);
+    }
+    var L = leaves.length, flipped = 0, labels = ['Cover', 'Chapter 01–02', 'Chapter 03', 'Chapter 04', 'Chapter 05', 'The end'];
+    var isPhone = function () { return window.matchMedia('(max-width: 820px)').matches; };
+    var tabs = $$('.book-tabs [data-goto]');
+    var mobilePage = 0;
+
+    var paint = function () {
+      leaves.forEach(function (lf, k) {
+        var f = k < flipped;
+        lf.classList.toggle('is-flipped', f);
+        if (!lf._moving) lf.style.zIndex = f ? k + 1 : L - k;
+        // hide links on the hidden side of a leaf from keyboard users
+        $$('a, button, summary', lf).forEach(function (el) {
+          var onBack = el.closest('.bpage--back');
+          var visible = isPhone() || (onBack ? f : !f) && (k === flipped || k === flipped - 1);
+          el.tabIndex = visible ? 0 : -1;
+        });
+      });
+      bookEl.classList.toggle('is-closed', flipped === 0);
+      bookEl.classList.toggle('is-end', flipped === L);
+      var cnt = $('#bookCount');
+      if (isPhone()) {
+        cnt.textContent = (mobilePage + 1) + ' / ' + pages.length;
+        $('#bookPrev').disabled = mobilePage === 0; $('#bookNext').disabled = mobilePage === pages.length - 1;
+      } else {
+        cnt.textContent = labels[flipped] || '';
+        $('#bookPrev').disabled = flipped === 0; $('#bookNext').disabled = flipped === L;
+      }
+      var cur = isPhone() ? mobilePage : flipped * 2 - 1;
+      tabs.forEach(function (t) {
+        var p = +t.dataset.goto;
+        t.classList.toggle('is-active', isPhone() ? Math.abs(p - cur) < 1 : Math.ceil(p / 2) === flipped);
+      });
+    };
+
+    var flipTo = function (target) {
+      target = Math.max(0, Math.min(L, target));
+      if (target === flipped) return;
+      var dir = target > flipped ? 1 : -1, order = [];
+      for (var k = flipped; k !== target; k += dir) order.push(dir > 0 ? k : k - 1);
+      order.forEach(function (k, n) {
+        setTimeout(function () {
+          var lf = leaves[k]; lf._moving = true; lf.style.zIndex = 100 + n;
+          flipped += dir; paint();
+          setTimeout(function () { lf._moving = false; paint(); }, reduceMotion ? 0 : 1000);
+        }, reduceMotion ? 0 : n * 160);
+      });
+    };
+
+    var showPhonePage = function (p) {
+      mobilePage = Math.max(0, Math.min(pages.length - 1, p));
+      stage.scrollTo({ left: pages[mobilePage].offsetLeft - stage.offsetLeft - 4, behavior: reduceMotion ? 'auto' : 'smooth' });
+      paint();
+    };
+    var goPage = function (p) { if (isPhone()) showPhonePage(p); else flipTo(Math.ceil(p / 2)); };
+
+    $('#bookNext').addEventListener('click', function () { isPhone() ? showPhonePage(mobilePage + 1) : flipTo(flipped + 1); });
+    $('#bookPrev').addEventListener('click', function () { isPhone() ? showPhonePage(mobilePage - 1) : flipTo(flipped - 1); });
+    $$('[data-next]', stage).forEach(function (b) { b.addEventListener('click', function () { isPhone() ? showPhonePage(1) : flipTo(1); }); });
+    $$('[data-goto]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        goPage(+b.dataset.goto);
+        if (b.closest('.book-tabs')) bookEl.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      });
+    });
+    // click near the outer edge of a page to turn it
+    stage.addEventListener('click', function (e) {
+      if (isPhone() || e.target.closest('a, button, summary, details')) return;
+      var r = stage.getBoundingClientRect(), x = e.clientX - r.left;
+      if (x > r.width * 0.86) flipTo(flipped + 1);
+      else if (x < r.width * 0.14) flipTo(flipped - 1);
+    });
+    document.addEventListener('keydown', function (e) {
+      var r = bookEl.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); $('#bookNext').click(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); $('#bookPrev').click(); }
+    });
+    var st;
+    stage.addEventListener('scroll', function () {
+      if (!isPhone()) return;
+      clearTimeout(st);
+      st = setTimeout(function () { mobilePage = Math.round(stage.scrollLeft / (pages[0].offsetWidth + 14)); paint(); }, 80);
+    }, { passive: true });
+    window.addEventListener('resize', paint);
+    paint();
   }
 
   var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
