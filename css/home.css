@@ -86,7 +86,6 @@
 .bpage { cursor: pointer; }
 .bpage a, .bpage button, .bpage summary { cursor: pointer; }
 .bpage:not(.bpage--back):hover { box-shadow: inset 20px 0 26px -20px rgba(31,20,82,.2), 0 24px 50px rgba(150,20,90,.16); }
-.book-hint { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 10px; }
 .book-ctrl__auto { font-size: .8rem; }
 .leaf {
   position: absolute; top: 0; left: 50%; width: 50%; height: 100%;
