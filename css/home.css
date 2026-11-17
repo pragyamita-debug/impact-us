@@ -34,11 +34,6 @@
 .h-link:hover { color: var(--accent); }
 .h-hero__visual img { width: 100%; height: auto; border-radius: 26px; box-shadow: var(--shadow); aspect-ratio: 4 / 3; object-fit: cover; }
 
-/* ---------- curiosity strip ---------- */
-.h-hook { padding: 0 0 clamp(40px, 6vw, 64px); }
-.h-hook__inner { text-align: center; border-top: 1px solid var(--line); padding-top: clamp(32px, 5vw, 48px); }
-.h-hook__inner p:first-child { color: var(--muted); }
-.h-hook__q { font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif; font-weight: 800; font-size: clamp(1.5rem, 3.2vw, 2.3rem); letter-spacing: -0.02em; margin-top: 6px; color: var(--text); }
 
 /* ---------- book section ---------- */
 .book-sec { padding: clamp(48px, 7vw, 88px) 0; overflow: hidden; }
