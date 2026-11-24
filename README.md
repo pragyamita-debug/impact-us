@@ -35,3 +35,8 @@ Home page photos (`assets/img/ref-*.jpg`) are free photos from Unsplash (Unsplas
 - Smith: https://unsplash.com/photos/TTOSniPxVmY
 - Sandra: https://unsplash.com/photos/DmGzwwuLPG8
 - Kabir: https://unsplash.com/photos/xbQpVuU3Y-c
+- Video host (`assets/img/host.jpg`), photo by Vitaly Gariev: https://unsplash.com/photos/jI4HREHtae4
+
+## Explainer video
+`assets/video/impactus-explainer.mp4` (1:53, 1280×720) is an original motion-graphics video with a
+neural text-to-speech voice-over (Microsoft "Jenny") and an original synthesised music track.
