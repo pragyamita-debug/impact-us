@@ -291,9 +291,17 @@
   var promo = $('#promoVideo');
   if (promo) {
     var playPromo = function () { var p = promo.play(); if (p && p.catch) p.catch(function () {}); };
+    var soundBtn = $('#promoSound');
+    var withSound = function () {
+      promo.muted = false; promo.volume = 1; promo.currentTime = 0; playPromo();
+      if (soundBtn) soundBtn.hidden = true;
+    };
+    if (soundBtn) soundBtn.addEventListener('click', withSound);
+    promo.addEventListener('volumechange', function () { if (!promo.muted && soundBtn) soundBtn.hidden = true; });
     $$('[data-play]').forEach(function (b) {
       b.addEventListener('click', function (e) {
         e.preventDefault();
+        promo.muted = false; if (soundBtn) soundBtn.hidden = true;
         promo.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
         promo.currentTime = 0; setTimeout(playPromo, reduceMotion ? 0 : 600);
       });
