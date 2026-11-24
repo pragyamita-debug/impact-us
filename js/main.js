@@ -287,6 +287,26 @@
     }
   }
 
+  /* ---------- ImpactUs explainer video ---------- */
+  var promo = $('#promoVideo');
+  if (promo) {
+    var playPromo = function () { var p = promo.play(); if (p && p.catch) p.catch(function () {}); };
+    $$('[data-play]').forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        e.preventDefault();
+        promo.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+        promo.currentTime = 0; setTimeout(playPromo, reduceMotion ? 0 : 600);
+      });
+    });
+    if (params.get('play')) { setTimeout(playPromo, 500); }
+    else if ('IntersectionObserver' in window && !reduceMotion) {
+      var vio = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting) { if (promo.currentTime === 0) playPromo(); vio.disconnect(); }
+      }, { threshold: 0.6 });
+      vio.observe(promo);
+    }
+  }
+
   /* ---------- application form (Apply page) ---------- */
   var form = $('#applyForm');
   if (form) {

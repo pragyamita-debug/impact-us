@@ -151,7 +151,7 @@
           <a href="#how" class="bp-video" data-play aria-label="Play the How It Works walkthrough">
             <img src="assets/img/ref-video.jpg" alt="A young professional at a laptop in a meeting" width="1200" height="600" />
             <span class="bp-video__play" aria-hidden="true">▶</span>
-            <span class="bp-video__bar"><span>▶</span><span>🔊</span><span>0:00 / 0:25</span><i></i><span>⛶</span></span>
+            <span class="bp-video__bar"><span>▶</span><span>🔊</span><span>0:00 / 1:28</span><i></i><span>⛶</span></span>
           </a>
           <span class="bp-num">6</span>
         </article>
@@ -217,96 +217,9 @@
       <h2 class="reveal">How <span class="hl">Impactus Works</span></h2>
     </div>
 
-    <div class="how">
-      <div class="player reveal" id="player">
-        <div class="screen" id="screen">
-          <!-- Scene 1: CV → Website -->
-          <div class="scene" data-scene="0">
-            <div class="cv">
-              <div class="cv__head"><span class="cv__ph"></span><div><b>CURRICULUM VITAE</b><i></i></div></div>
-              <i></i><i></i><i class="s"></i><i></i><i class="s"></i><i></i>
-            </div>
-            <div class="morph-arrow">➜</div>
-            <div class="site">
-              <div class="browser-dots"><i></i><i></i><i></i><span>kabirahmed.com</span></div>
-              <div class="site__body">
-                <div class="site__nav"><i></i><i></i><i></i><i></i></div>
-                <div class="site__hero">
-                  <div><small>Hi, I’m Kabir</small><b>Digital Marketer</b><span class="site__btn">View my work</span></div>
-                  <img src="assets/img/kabir.jpg" alt="" />
-                </div>
-                <div class="site__cards"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-          </div>
-          <!-- Scene 2: SEO -->
-          <div class="scene" data-scene="1">
-            <div class="seo">
-              <div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="ring__bg"/><circle cx="60" cy="60" r="50" class="ring__fg"/></svg><div class="ring__val"><b data-ring>0</b><small>SEO score</small></div></div>
-              <div class="chips">
-                <span>Meta titles</span><span>Keywords</span><span>Schema</span><span>Backlinks</span><span>Page speed 98</span><span>LinkedIn sync</span><span>Content plan</span><span>Mobile-ready</span>
-              </div>
-            </div>
-          </div>
-          <!-- Scene 3: Google -->
-          <div class="scene" data-scene="2">
-            <div class="serp">
-              <div class="serp__logo"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></div>
-              <div class="serp__box"><span data-type="kabir digital marketer portfolio"></span><i class="caret"></i></div>
-              <div class="serp__res">
-                <span class="serp__one">#1</span>
-                <small>kabirahmed.com</small>
-                <b>Kabir – Digital Marketer | Portfolio</b>
-                <p>Digital marketer with expertise in SEO, content and growth marketing.</p>
-              </div>
-              <div class="serp__res serp__res--dim"><i></i><i></i></div>
-            </div>
-          </div>
-          <!-- Scene 4: Traffic -->
-          <div class="scene" data-scene="3">
-            <div class="traffic">
-              <div class="traffic__stats">
-                <div><b data-num="1240">0</b><small>Profile views</small></div>
-                <div><b data-num="86">0</b><small>Recruiter visits</small></div>
-                <div><b data-num="14">0</b><small>Client enquiries</small></div>
-              </div>
-              <svg class="traffic__chart" viewBox="0 0 400 140" preserveAspectRatio="none">
-                <path class="area" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12 L400 140 L0 140Z"/>
-                <path class="line" d="M0 130 L50 122 L100 115 L150 100 L200 92 L250 70 L300 52 L350 30 L400 12"/>
-              </svg>
-              <div class="visitors"><span>🏢 Employer</span><span>💼 Client</span><span>🧑‍💼 Recruiter</span></div>
-            </div>
-          </div>
-          <!-- Scene 5: Interview -->
-          <div class="scene" data-scene="4">
-            <div class="invite">
-              <div class="invite__card">
-                <div class="invite__top"><span class="check">✓</span><div><b>Interview invitation</b><small>From: Hiring Team</small></div></div>
-                <p>Hi Kabir, we came across your portfolio on Google and would love to talk about the Digital Marketing role.</p>
-                <div class="invite__when">📅 Thursday · 11:00 AM</div>
-              </div>
-              <div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-          </div>
-
-          <div class="caption" id="caption">We build your personal website</div>
-          <button class="big-play" id="bigPlay" aria-label="Play walkthrough">▶</button>
-        </div>
-        <div class="controls">
-          <button class="ctrl" id="playBtn" aria-label="Play">▶</button>
-          <div class="bar" id="bar"><div class="bar__fill" id="barFill"></div><div class="bar__marks"><i></i><i></i><i></i><i></i></div></div>
-          <span class="time" id="time">0:00 / 0:25</span>
-        </div>
+    <div class="promo reveal">
+        <video class="promo__video" id="promoVideo" src="assets/video/impactus-explainer.mp4" poster="assets/video/impactus-explainer-poster.jpg" controls muted playsinline preload="metadata" aria-label="ImpactUs explainer video: how your CV becomes a website, gets found on Google and lands your first interview"></video>
       </div>
-
-      <ol class="steps" id="steps">
-        <li data-step="0"><span>1</span><div><b>We build your personal website</b><small>Your CV becomes a professional portfolio site.</small></div></li>
-        <li data-step="1"><span>2</span><div><b>Optimize it with SEO &amp; digital marketing</b><small>Your expert tunes keywords, content and links.</small></div></li>
-        <li data-step="2"><span>3</span><div><b>Get it ranked on Google</b><small>Search your name + role — you show up first.</small></div></li>
-        <li data-step="3"><span>4</span><div><b>Drive the right traffic</b><small>Employers &amp; clients find and visit you.</small></div></li>
-        <li data-step="4"><span>5</span><div><b>Land your first interview. Guaranteed.</b><small>Outreach + coaching until the call is booked.</small></div></li>
-      </ol>
-    </div>
   </div>
 </section>
 

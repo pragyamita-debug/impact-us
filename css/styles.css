@@ -267,6 +267,8 @@ p { margin: 0; }
 .scrub .w.on.key { color: var(--hl); }
 
 /* ---------- how it works / player ---------- */
+.promo { max-width: 980px; margin: 0 auto; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff6fa; }
+.promo__video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #fff6fa; }
 .how { display: grid; grid-template-columns: 1.55fr 1fr; gap: 40px; align-items: center; }
 .player { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); }
 .screen { position: relative; aspect-ratio: 16/9; background: var(--screen-bg); overflow: hidden; }
