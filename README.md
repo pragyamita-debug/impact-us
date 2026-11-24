@@ -30,7 +30,6 @@ Open `index.html` in a browser. To publish: GitHub → Settings → Pages → De
 
 ## Photo credits
 Home page photos (`assets/img/ref-*.jpg`) are free photos from Unsplash (Unsplash License):
-- Hero: https://unsplash.com/photos/Y4zNMW3pQAs
 - Video cover: https://unsplash.com/photos/gxat5nfmNRc
 - Smith: https://unsplash.com/photos/TTOSniPxVmY
 - Sandra: https://unsplash.com/photos/DmGzwwuLPG8
